@@ -7,6 +7,8 @@ let numSquares = 1000;
 let textures = [];
 let texturesmap;
 
+let skibidi = 49
+
 
 import { tickUpdate } from './tickUpdate.js';
 import { MovingSquare } from './MovingSquare.js';
