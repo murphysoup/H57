@@ -7,7 +7,7 @@ let numSquares = 1000;
 let textures = [];
 let texturesmap;
 
-let skibidi = 49
+let skibidi = 40
 
 
 import tickUpdate from './tickUpdate.js';
