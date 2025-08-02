@@ -1,6 +1,6 @@
 // MovingSquare.js
 
-let xrizz = 5
+let xrizz = 4
 
 
 export class MovingSquare {
