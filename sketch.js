@@ -1,5 +1,10 @@
 // sketch.js
 
+import tickUpdate from './tickUpdate.js';
+import MovingSquare from './MovingSquare.js';
+
+
+
 let player;
 let movingSquares = [];
 let speed = 2;
