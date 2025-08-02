@@ -6,7 +6,7 @@ let textures = [];
 
 function preload() {
   // Load textures here
-  textures.push(loadImage('assets/maps/map1.jpg'));
+  const texturesmap = (loadImage('assets/maps/map1.jpg'));
 }
 
 function setup() {
@@ -14,14 +14,16 @@ function setup() {
   player = {
     x: width / 2,
     y: height / 2,
-    sqsize: 30,
+    sqsize: 32,
   };
+
+  movingSquares.push(new MovingSquare(-2000, -2000, 2000, texturesmap));
 
   for (let i = 0; i < numSquares; i++) {
     let x = random(-2000, 2000);
     let y = random(-2000, 2000);
     let sqsize = 20;
-    let tex = random(textures);
+    let tex = texturesmap;
     movingSquares.push(new MovingSquare(x, y, sqsize, tex));
   }
 }
