@@ -6,7 +6,7 @@ let textures = [];
 
 function preload() {
   // Load textures here
-  const texturesmap = (loadImage('assets/maps/map1.jpg'));
+  texturesmap = (loadImage('assets/maps/map1.jpg'));
 }
 
 function setup() {
