@@ -1,5 +1,8 @@
 // MovingSquare.js
 
+let xrizz = 5
+
+
 export class MovingSquare {
   constructor(x, y, sqsize, img) {
     this.x = x;
