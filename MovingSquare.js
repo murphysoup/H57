@@ -19,9 +19,9 @@ export default class MovingSquare {
   display(p) {
     if (
       this.x + this.sqsize > 0 &&
-      this.x < 1000 &&
+      this.x < p.width &&
       this.y + this.sqsize > 0 &&
-      this.y < 1000
+      this.y < p.height
     ) {
       p.image(this.img, this.x, this.y, this.sqsize, this.sqsize);
     }
