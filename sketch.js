@@ -24,7 +24,7 @@ p.preload = () => {
 }
 
 p.setup = () => {
-  p.createCanvas(windowWidth, windowHeight);
+  p.createCanvas(p.windowWidth, p.windowHeight);
   player = {
     x: p.width / 2,
     y: p.height / 2,
