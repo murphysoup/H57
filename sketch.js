@@ -60,7 +60,7 @@ p.draw = () => {
 
   p.fill(255, 50, 50);
   p.noStroke();
-  p.rectMode(CENTER);
+  p.rectMode(p.CENTER);
   p.rect(player.x, player.y, player.sqsize, player.sqsize);
 }
 
