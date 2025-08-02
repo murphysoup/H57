@@ -10,8 +10,8 @@ let texturesmap;
 let skibidi = 49
 
 
-import { tickUpdate } from './tickUpdate.js';
-import { MovingSquare } from './MovingSquare.js';
+import tickUpdate from './tickUpdate.js';
+import MovingSquare from './MovingSquare.js';
 
 
 function preload() {
