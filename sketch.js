@@ -14,8 +14,6 @@ import tickUpdate from './tickUpdate.js';
 import MovingSquare from './MovingSquare.js';
 
 
-let texturesmap;
-
 
 const sketch = (p) => {
 
