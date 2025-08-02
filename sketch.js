@@ -15,11 +15,11 @@ import MovingSquare from './MovingSquare.js';
 
 const sketch = (p) => {
 
-preload = () => {
+p.preload = () => {
   texturesmap = p.loadImage('assets/maps/map1.jpg');
 }
 
-setup = () => {
+p.setup = () => {
   p.createCanvas(800, 600);
   player = {
     x: p.width / 2,
