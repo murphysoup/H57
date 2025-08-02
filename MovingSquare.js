@@ -16,14 +16,14 @@ export default class MovingSquare {
     this.y += dy;
   }
 
-  display() {
+  display(p) {
     if (
       this.x + this.sqsize > 0 &&
       this.x < 1000 &&
       this.y + this.sqsize > 0 &&
       this.y < 1000
     ) {
-      image(this.img, this.x, this.y, this.sqsize, this.sqsize);
+      p.image(this.img, this.x, this.y, this.sqsize, this.sqsize);
     }
   }
 }
