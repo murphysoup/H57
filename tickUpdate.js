@@ -1,5 +1,5 @@
 // tickUpdate.js
-let rizz=30;
+let rizz=300;
 
 
 export default function tickUpdate(movingSquares, dx, dy) {
