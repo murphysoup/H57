@@ -62,4 +62,4 @@ function draw() {
 
 }
 
-new p5(s);
+new p5(sketch);
