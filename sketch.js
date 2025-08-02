@@ -13,6 +13,7 @@ let skibidi = 40
 import tickUpdate from './tickUpdate.js';
 import MovingSquare from './MovingSquare.js';
 
+const sketch = (p) => {
 
 function preload() {
   texturesmap = loadImage('assets/maps/map1.jpg');
@@ -58,3 +59,7 @@ function draw() {
   rectMode(CENTER);
   rect(player.x, player.y, player.sqsize, player.sqsize);
 }
+
+}
+
+new p5(s);
