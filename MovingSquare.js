@@ -1,6 +1,6 @@
 // MovingSquare.js
 
-let xrizz = 40
+let xrizz = 40;
 
 
 export default class MovingSquare {
