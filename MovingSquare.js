@@ -1,6 +1,6 @@
 // MovingSquare.js
 
-export default class MovingSquare {
+export class MovingSquare {
   constructor(x, y, sqsize, img) {
     this.x = x;
     this.y = y;
