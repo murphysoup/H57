@@ -6,7 +6,6 @@ let textures = [];
 
 function preload() {
   // Load textures here
-  textures.push(loadImage('assets/objectimages/p.jpg'));
   textures.push(loadImage('assets/maps/map1.jpg'));
 }
 
