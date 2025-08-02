@@ -3,6 +3,8 @@ let movingSquares = [];
 let speed = 2;
 let numSquares = 1000;
 let textures = [];
+let texturesmap
+
 
 function preload() {
   // Load textures here
