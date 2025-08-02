@@ -1,9 +1,9 @@
 // MovingSquare.js
 
-let xrizz = 4
+let xrizz = 40
 
 
-export class MovingSquare {
+export default class MovingSquare {
   constructor(x, y, sqsize, img) {
     this.x = x;
     this.y = y;
