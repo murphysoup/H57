@@ -1,14 +1,14 @@
+// sketch.js
+
 let player;
 let movingSquares = [];
 let speed = 2;
 let numSquares = 1000;
 let textures = [];
-let texturesmap
-
+let texturesmap;
 
 function preload() {
-  // Load textures here
-  texturesmap = (loadImage('assets/maps/map1.jpg'));
+  texturesmap = loadImage('assets/maps/map1.jpg');
 }
 
 function setup() {
@@ -35,10 +35,10 @@ function draw() {
 
   let dx = 0;
   let dy = 0;
-  if (keyIsDown(87)) dy += speed; // W
-  if (keyIsDown(83)) dy -= speed; // S
-  if (keyIsDown(65)) dx += speed; // A
-  if (keyIsDown(68)) dx -= speed; // D
+  if (keyIsDown(87)) dy += speed;
+  if (keyIsDown(83)) dy -= speed;
+  if (keyIsDown(65)) dx += speed;
+  if (keyIsDown(68)) dx -= speed;
 
   tickUpdate(movingSquares, dx, dy);
 
@@ -50,35 +50,4 @@ function draw() {
   noStroke();
   rectMode(CENTER);
   rect(player.x, player.y, player.sqsize, player.sqsize);
-}
-
-class MovingSquare {
-  constructor(x, y, sqsize, img) {
-    this.x = x;
-    this.y = y;
-    this.sqsize = sqsize;
-    this.img = img;
-  }
-
-  update(dx, dy) {
-    this.x += dx;
-    this.y += dy;
-  }
-
-  display() {
-    if (
-      this.x + this.sqsize > 0 &&
-      this.x < width &&
-      this.y + this.sqsize > 0 &&
-      this.y < height
-    ) {
-      image(this.img, this.x, this.y, this.sqsize, this.sqsize);
-    }
-  }
-}
-
-function tickUpdate(movingSquares, dx, dy) {
-  for (let sq of movingSquares) {
-    sq.update(dx, dy);
-  }
 }
