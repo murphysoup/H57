@@ -1,16 +1,16 @@
 // sketch.js
 
-import { tickUpdate } from './tickUpdate.js';
-import { MovingSquare } from './MovingSquare.js';
-
-
-
 let player;
 let movingSquares = [];
 let speed = 2;
 let numSquares = 1000;
 let textures = [];
 let texturesmap;
+
+
+import { tickUpdate } from './tickUpdate.js';
+import { MovingSquare } from './MovingSquare.js';
+
 
 function preload() {
   texturesmap = loadImage('assets/maps/map1.jpg');
