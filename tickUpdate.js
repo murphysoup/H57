@@ -1,8 +1,8 @@
 // tickUpdate.js
-let rizz=3
+let rizz=30;
 
 
-export function tickUpdate(movingSquares, dx, dy) {
+export default function tickUpdate(movingSquares, dx, dy) {
   for (let sq of movingSquares) {
     sq.update(dx, dy);
   }
