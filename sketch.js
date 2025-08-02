@@ -13,8 +13,14 @@ let skibidi = 40
 import tickUpdate from './tickUpdate.js';
 import MovingSquare from './MovingSquare.js';
 
+
+let texturesmap;
+
+
 const sketch = (p) => {
 
+let player;
+let movingSquares = [];
 p.preload = () => {
   texturesmap = p.loadImage('assets/maps/map1.jpg');
 }
