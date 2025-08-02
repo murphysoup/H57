@@ -24,10 +24,10 @@ p.preload = () => {
 }
 
 p.setup = () => {
-  p.createCanvas(800, 600);
+  p.createCanvas(1000, 1000);
   player = {
-    x: p.width / 2,
-    y: p.height / 2,
+    x: 1000 / 2,
+    y: 1000 / 2,
     sqsize: 32,
   };
 
