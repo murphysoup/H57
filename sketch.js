@@ -22,6 +22,7 @@ let player;
 let movingSquares = [];
 
 p.preload = () => {
+  console.log("freaky");
   texturesmap = p.loadImage('assets/maps/map1.jpg');
 }
   
