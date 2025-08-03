@@ -6,8 +6,7 @@ let speed = 2;
 let numSquares = 1000;
 let textures = [];
 let texturesmap;
-p.globx = 0;
-p.globy = 0;
+
 let skibidi = 40
 
 
@@ -18,6 +17,8 @@ import MovingSquare from './MovingSquare.js';
 
 const sketch = (p) => {
 
+p.globx = 0;
+p.globy = 0;
 let player;
 let movingSquares = [];
 p.preload = () => {
