@@ -33,7 +33,7 @@ p.buildlevel = (lvl,sx,sy) => {
   p.globx = spawnx;
   p.globy = spawny;
   
-  if (lvl = 1) {
+  if (lvl == 1) {
   movingSquares.push(new MovingSquare(-2000-spawnx, -2000-spawny, 4000, texturesmap));
 
   for (let i = 0; i < numSquares; i++) {
