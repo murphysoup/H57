@@ -36,7 +36,7 @@ p.setup = () => {
   };
   p.textSize(32);
   p.fill(0);  
-  movingSquares.push(new MovingSquare(-2000, -2000, 2000, texturesmap));
+  movingSquares.push(new MovingSquare(-2000, -2000, 4000, texturesmap));
 
   for (let i = 0; i < numSquares; i++) {
     let x = p.random(-2000, 2000);
