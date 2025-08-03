@@ -31,8 +31,8 @@ p.setup = () => {
     y: p.height / 2,
     sqsize: 32,
   };
-  textSize(32);
-  fill(0);  
+  p.textSize(32);
+  p.fill(0);  
   movingSquares.push(new MovingSquare(-2000, -2000, 2000, texturesmap));
 
   for (let i = 0; i < numSquares; i++) {
@@ -62,7 +62,7 @@ p.draw = () => {
   for (let sq of movingSquares) {
     sq.display(p);
   }
-  text("coords: " + player.x + "," + player.y, 50, 100);
+  p.text("coords: " + player.x + "," + player.y, 50, 100);
 
   p.fill(255, 50, 50);
   p.noStroke();
