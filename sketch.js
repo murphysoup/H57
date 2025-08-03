@@ -48,13 +48,13 @@ p.setup = () => {
   p.createCanvas(p.windowWidth, p.windowHeight);
   p.globx = p.width / 2;
   p.globy = p.height / 2;
-  player = {
+  p.player = {
     x: p.width / 2,
     y: p.height / 2,
     sqsize: 32,
   };
   p.textSize(32);
-  p.fill(0);  
+  p.fill(0); 
   p.buildlevel(1,-2000,-2000)  
 
 
