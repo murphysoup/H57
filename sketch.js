@@ -44,6 +44,7 @@ p.buildlevel = (lvl,sx,sy) => {
     movingSquares.push(new MovingSquare(x, y, sqsize, tex));
   }
 }
+}
 
 p.setup = () => {
   console.log("setupstart");
@@ -63,7 +64,7 @@ p.setup = () => {
 
 
   }
-}
+
 
 
 
