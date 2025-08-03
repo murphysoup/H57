@@ -53,6 +53,8 @@ p.setup = () => {
     y: p.height / 2,
     sqsize: 32,
   };
+  console.log('ee');
+  console.log(p.player);
   p.textSize(32);
   p.fill(0); 
   p.buildlevel(1,-2000,-2000)  
@@ -84,6 +86,8 @@ p.draw = () => {
   p.fill(255, 50, 50);
   p.noStroke();
   p.rectMode(p.CENTER);
+  console.log("4rt4");
+  console.log(p.player);
   p.rect(player.x, player.y, player.sqsize, player.sqsize);
 }
 
