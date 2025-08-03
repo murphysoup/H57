@@ -16,9 +16,9 @@ import MovingSquare from './MovingSquare.js';
 
 
 const sketch = (p) => {
+console.log("inside sketch");
 
-
-//let player;
+let player;
 let movingSquares = [];
 
 p.preload = () => {
@@ -45,7 +45,7 @@ p.buildlevel = (lvl,sx,sy) => {
 }
 
 p.setup = () => {
-
+  console.log("setupstart");
   p.createCanvas(p.windowWidth, p.windowHeight);
   p.globx = p.width / 2;
   p.globy = p.height / 2;
