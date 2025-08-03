@@ -24,13 +24,15 @@ p.preload = () => {
 }
 
 p.setup = () => {
+
   p.createCanvas(p.windowWidth, p.windowHeight);
   player = {
     x: p.width / 2,
     y: p.height / 2,
     sqsize: 32,
   };
-
+  textSize(32);
+  fill(0);  
   movingSquares.push(new MovingSquare(-2000, -2000, 2000, texturesmap));
 
   for (let i = 0; i < numSquares; i++) {
@@ -39,8 +41,11 @@ p.setup = () => {
     let sqsize = 20;
     let tex = texturesmap;
     movingSquares.push(new MovingSquare(x, y, sqsize, tex));
+
   }
 }
+
+
 
 p.draw = () => {
   p.background(240);
@@ -57,6 +62,7 @@ p.draw = () => {
   for (let sq of movingSquares) {
     sq.display(p);
   }
+  text("coords: " + player.x + "," + player.y, 50, 100);
 
   p.fill(255, 50, 50);
   p.noStroke();
