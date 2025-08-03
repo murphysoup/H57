@@ -16,13 +16,11 @@ import MovingSquare from './MovingSquare.js';
 
 
 const sketch = (p) => {
-console.log("inside sketch");
 
 let player;
 let movingSquares = [];
 
 p.preload = () => {
-  console.log("freaky");
   texturesmap = p.loadImage('assets/maps/map1.jpg');
 }
   
@@ -47,7 +45,6 @@ p.buildlevel = (lvl,sx,sy) => {
 }
 
 p.setup = () => {
-  console.log("setupstart");
   p.createCanvas(p.windowWidth, p.windowHeight);
   p.globx = p.width / 2;
   p.globy = p.height / 2;
@@ -89,10 +86,7 @@ p.draw = () => {
   p.fill(255, 50, 50);
   p.noStroke();
   p.rectMode(p.CENTER);
-  console.log("4rt4");
-  console.log(player);
-  console.log(p.player);
-  p.rect(player.x, player.y, player.sqsize, player.sqsize);
+  p.rect(p.player.x, p.player.y, p.player.sqsize, p.player.sqsize);
 }
 
 }
