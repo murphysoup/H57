@@ -6,8 +6,8 @@ let speed = 2;
 let numSquares = 1000;
 let textures = [];
 let texturesmap;
-let p.globx;
-let p.globy;
+p.globx = 0;
+p.globy = 0;
 let skibidi = 40
 
 
