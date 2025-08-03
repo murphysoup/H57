@@ -23,6 +23,25 @@ let movingSquares = [];
 p.preload = () => {
   texturesmap = p.loadImage('assets/maps/map1.jpg');
 }
+  
+p.buildlevel = (lvl,sx,sy) => {
+  movingSqares = []
+  spawnx = sx+p.width
+  spawny = sy+p.height
+  p.globx = spawnx
+  p.globy = spawny
+  
+  if (lvl = 1) {
+  movingSquares.push(new MovingSquare(-2000-spawnx, -2000-spawny, 4000, texturesmap));
+
+  for (let i = 0; i < numSquares; i++) {
+    let x = p.random(2000-spawnx, 2000-spawny);
+    let y = p.random(-2000-spawnx, 2000-spawny);
+    let sqsize = 20;
+    let tex = texturesmap;
+    movingSquares.push(new MovingSquare(x, y, sqsize, tex));
+  }
+}
 
 p.setup = () => {
 
@@ -36,14 +55,8 @@ p.setup = () => {
   };
   p.textSize(32);
   p.fill(0);  
-  movingSquares.push(new MovingSquare(-2000, -2000, 4000, texturesmap));
+  p.buildlevel(1,-2000,-2000)  
 
-  for (let i = 0; i < numSquares; i++) {
-    let x = p.random(-2000, 2000);
-    let y = p.random(-2000, 2000);
-    let sqsize = 20;
-    let tex = texturesmap;
-    movingSquares.push(new MovingSquare(x, y, sqsize, tex));
 
   }
 }
