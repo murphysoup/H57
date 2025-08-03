@@ -12,6 +12,8 @@ export default class MovingSquare {
   }
 
   update(dx, dy) {
+    p.globx += dx;
+    p.globy += dy;
     this.x += dx;
     this.y += dy;
   }
