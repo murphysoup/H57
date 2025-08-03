@@ -54,8 +54,8 @@ p.setup = () => {
     y: p.height / 2,
     sqsize: 32,
   };
-  p.console.log('ee');
-  p.console.log(p.player);
+  console.log('ee');
+  console.log(p.player);
   p.textSize(32);
   p.fill(0); 
   p.buildlevel(1,-2000,-2000)  
