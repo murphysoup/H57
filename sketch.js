@@ -6,7 +6,8 @@ let speed = 2;
 let numSquares = 1000;
 let textures = [];
 let texturesmap;
-
+let p.globx;
+let p.globy;
 let skibidi = 40
 
 
@@ -62,7 +63,7 @@ p.draw = () => {
   for (let sq of movingSquares) {
     sq.display(p);
   }
-  p.text("coords: " + player.x + "," + player.y, 50, 100);
+  p.text("coords: " + p.globx + "," + p.globy, 50, 100);
 
   p.fill(255, 50, 50);
   p.noStroke();
