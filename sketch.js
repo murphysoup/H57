@@ -26,11 +26,11 @@ p.preload = () => {
 }
   
 p.buildlevel = (lvl,sx,sy) => {
-  movingSqares = []
-  spawnx = sx+p.width / 2
-  spawny = sy+p.height / 2
-  p.globx = spawnx
-  p.globy = spawny
+  movingSqares = [];
+  spawnx = sx+p.width / 2;
+  spawny = sy+p.height / 2;
+  p.globx = spawnx;
+  p.globy = spawny;
   
   if (lvl = 1) {
   movingSquares.push(new MovingSquare(-2000-spawnx, -2000-spawny, 4000, texturesmap));
@@ -88,6 +88,7 @@ p.draw = () => {
   p.noStroke();
   p.rectMode(p.CENTER);
   console.log("4rt4");
+  console.log(player);
   console.log(p.player);
   p.rect(player.x, player.y, player.sqsize, player.sqsize);
 }
