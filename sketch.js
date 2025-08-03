@@ -27,7 +27,7 @@ p.preload = () => {
 }
   
 p.buildlevel = (lvl,sx,sy) => {
-  movingSqares = [];
+  movingSquares = [];
   spawnx = sx+p.width / 2;
   spawny = sy+p.height / 2;
   p.globx = spawnx;
