@@ -17,8 +17,7 @@ import MovingSquare from './MovingSquare.js';
 
 const sketch = (p) => {
 
-p.globx = 0;
-p.globy = 0;
+
 let player;
 let movingSquares = [];
 p.preload = () => {
@@ -28,6 +27,8 @@ p.preload = () => {
 p.setup = () => {
 
   p.createCanvas(p.windowWidth, p.windowHeight);
+  p.globx = p.width / 2;
+  p.globy = p.height / 2;
   player = {
     x: p.width / 2,
     y: p.height / 2,
@@ -58,8 +59,8 @@ p.draw = () => {
   if (p.keyIsDown(83)) dy -= speed;
   if (p.keyIsDown(65)) dx += speed;
   if (p.keyIsDown(68)) dx -= speed;
-  p.globx += dx;
-  p.globy += dy;
+  p.globx -= dx;
+  p.globy -= dy;
   tickUpdate(movingSquares, dx, dy, p);
 
   for (let sq of movingSquares) {
