@@ -24,7 +24,7 @@ let player;
 let movingSquares = [];
 
 p.preload = () => {
-  p.texturesmap = p.loadImage('https://imgur.com/z7LFJNC');
+  p.texturesmap = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/download_33_1_usl3ii.jpg');
 };
 
   
