@@ -60,7 +60,7 @@ p.buildlevel = (lvl,sx,sy) => {
     let y = p.random(-2000-spawnx, 2000-spawny);
     let sqsize = 20;
     let tex = p.texturesmap;
-    print(tex)
+    console.log(tex)
     movingSquares.push(new MovingSquare(x, y, sqsize, tex));
   }
 }
