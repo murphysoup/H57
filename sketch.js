@@ -24,7 +24,7 @@ let player;
 let movingSquares = [];
 
 p.preload = () => {
-  p.texturesmap = p.loadImage('https://raw.githubusercontent.com/murphysoup/h57/master/assets/maps/map1.jpg');
+  p.texturesmap = p.loadImage('https://imgur.com/z7LFJNC');
 };
 
   
