@@ -21,8 +21,29 @@ let player;
 let movingSquares = [];
 
 p.preload = () => {
-  p.texturesmap = p.loadImage('assets/maps/map1.jpg');
-}
+  p.texturesmap = null;
+  p.imageLoaded = false;
+
+  p.loadImage(
+    'assets/maps/map1.jpg',
+    (img) => {
+      p.texturesmap = img;
+      p.imageLoaded = true;
+    },
+    () => {
+      // Create placeholder image if loading fails
+      const fallback = p.createGraphics(100, 100);
+      fallback.background(200, 0, 0);
+      fallback.fill(255);
+      fallback.textAlign(p.CENTER, p.CENTER);
+      fallback.text("Image failed", 50, 50);
+
+      p.texturesmap = fallback;
+      p.imageLoaded = true;
+    }
+  );
+};
+
   
 p.buildlevel = (lvl,sx,sy) => {
   movingSquares = [];
