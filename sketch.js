@@ -14,6 +14,9 @@ import tickUpdate from './tickUpdate.js';
 import MovingSquare from './MovingSquare.js';
 
 
+setTimeout(function() {
+    console.log("This  seconds");
+}, 3000);
 
 const sketch = (p) => {
 
