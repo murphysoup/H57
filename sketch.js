@@ -14,7 +14,7 @@ import tickUpdate from './tickUpdate.js';
 import MovingSquare from './MovingSquare.js';
 
 
-
+ 
 
 const sketch = (p) => {
 
