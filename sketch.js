@@ -21,7 +21,7 @@ let player;
 let movingSquares = [];
 
 p.preload = () => {
-  texturesmap = p.loadImage('assets/maps/map1.jpg');
+  p.texturesmap = p.loadImage('assets/maps/map1.jpg');
 }
   
 p.buildlevel = (lvl,sx,sy) => {
@@ -39,6 +39,7 @@ p.buildlevel = (lvl,sx,sy) => {
     let y = p.random(-2000-spawnx, 2000-spawny);
     let sqsize = 20;
     let tex = texturesmap;
+    print(tex)
     movingSquares.push(new MovingSquare(x, y, sqsize, tex));
   }
 }
