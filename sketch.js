@@ -97,4 +97,4 @@ p.draw = () => {
 
 setTimeout(() => {
   new p5(sketch);
-}, 3000);
+}, 300);
