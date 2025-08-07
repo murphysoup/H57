@@ -123,6 +123,8 @@ p.draw = () => {
   if (walls.some(wall => wall[0] === cell[0] && wall[1] === cell[1])) {
   collisiondetected = 1
   console.log("freaky");
+  dx = 0
+  dy = 0
   p.globx = globxold;
   p.globy = globyold;
   }
@@ -130,10 +132,8 @@ p.draw = () => {
   console.log(dx2);
 
 
-
-
   tickUpdate(movingSquares, dx, dy, p);
-  
+
   for (let sq of movingSquares) {
     sq.display(p);
   };
