@@ -95,6 +95,8 @@ p.draw = () => {
       cells.push([xc, yc]);
     }
   };
+  console.log(globx)
+  console.log(cells)
   for (let cell of cells) { 
     boxes.push(collisionGrid[cell[0]][cell[1]])
   };
