@@ -107,6 +107,7 @@ p.draw = () => {
   //  boxes.push(collisionGrid[cell[0]][cell[1]])
   //};
   //console.log(boxes);
+  let collisiondetected = 0;
   for (let cell of cells) { 
  // if (p.globx+dx < box[2] &&
   //      p.globx+dx + 32 > box[0] &&
@@ -115,9 +116,8 @@ p.draw = () => {
    // console.log(cell[0]+'fatty'+cell[1]);
 
  //  if (walls.includes([cell[0],cell[1]])) {
-  let collisiondetected = 0
   if (walls.some(wall => wall[0] === cell[0] && wall[1] === cell[1])) {
-  let collisiondetected = True
+  collisiondetected = True
   console.log("freaky");
   dx2 = 0;
   dy2 = 0;
