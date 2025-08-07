@@ -110,7 +110,7 @@ p.draw = () => {
   //      p.globx+dx + 32 > box[0] &&
    //     p.globy+dy < box[3] &&
      //   p.globy+dy + 32 > box[1]) {
-   if (collisionGrid[cell[0]][cell[1]] = 1) {
+   if (collisionGrid[cell[0]][cell[1]] == 1) {
   console.log("freaky")
   dx = 0;
   dy = 0;
@@ -132,7 +132,7 @@ p.draw = () => {
   p.rect(p.player.x, p.player.y, p.player.sqsize, p.player.sqsize);
 } 
 
-}
+};
 
 
 setTimeout(() => {
