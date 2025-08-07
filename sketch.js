@@ -41,7 +41,7 @@ p.buildlevel = (lvl,sx,sy) => {
   
   if (lvl == 1) {
   p.maxgridoffset = 10;
-  const collisionGrid = Array.from({ length: 10 }, () =>
+  collisionGrid = Array.from({ length: 10 }, () =>
   Array.from({ length: 10 }, () => [])
   );
 
