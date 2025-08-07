@@ -91,10 +91,14 @@ p.draw = () => {
   if (p.keyIsDown(68)) dx2 -= speed;
   let cells = [];
   let boxes = [];
-  let startX = Math.floor((p.globx+dx2 +1)/ 128);
-  let startY = Math.floor((p.globy+dy2 +1)/ 128);
-  let endX = Math.floor((p.globx+dx2 + 32-1) / 128);
-  let endY = Math.floor((p.globy+dy2 + 32-1) / 128);
+  let globxold = globx;
+  let globyold = globy;
+  p.globx -= dx;
+  p.globy -= dy;
+  let startX = Math.floor((p.globx +1)/ 128);
+  let startY = Math.floor((p.globy +1)/ 128);
+  let endX = Math.floor((p.globx + 32-1) / 128);
+  let endY = Math.floor((p.globy + 32-1) / 128);
   
   for (let xc = startX; xc <= endX; xc++) {
   for (let yc = startY; yc <= endY; yc++) {
@@ -119,19 +123,18 @@ p.draw = () => {
   if (walls.some(wall => wall[0] === cell[0] && wall[1] === cell[1])) {
   collisiondetected = 1
   console.log("freaky");
-  dx2 = 0;
-  dy2 = 0;
+  p.globx = globxold;
+  p.globy = globyold;
   }
   };
   console.log(dx2);
   dx = dx2;
   dy = dy2;
 
-  if (collisiondetected === 0) {
-  p.globx -= dx;
-  p.globy -= dy;
-  tickUpdate(movingSquares, dx, dy, p)
-  }
+
+
+  tickUpdate(movingSquares, dx, dy, p);
+  
   for (let sq of movingSquares) {
     sq.display(p);
   }
