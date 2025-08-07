@@ -44,11 +44,9 @@ p.buildlevel = (lvl,sx,sy) => {
   const collisionGrid = Array.from({ length: 10 }, () =>
   Array.from({ length: 10 }, () => [])
   );
-  console.log(collisionGrid)
 
   movingSquares.push(new MovingSquare(-2000-spawnx, -2000-spawny, 4000, p.texturesmap));
   p.addbox(collisionGrid,100,100,200,300);
-  console.log(collisionGrid)
   for (let i = 0; i < numSquares; i++) {
     let x = p.random(2000-spawnx, 2000-spawny);
     let y = p.random(-2000-spawnx, 2000-spawny);
@@ -68,8 +66,6 @@ p.setup = () => {
     y: p.height / 2,
     sqsize: 32,
   };
-  console.log('ee');
-  console.log(p.player);
   p.textSize(32);
   p.fill(0); 
   p.buildlevel(1,-2000,-2000)  
@@ -89,7 +85,30 @@ p.draw = () => {
   if (p.keyIsDown(83)) dy -= speed;
   if (p.keyIsDown(65)) dx += speed;
   if (p.keyIsDown(68)) dx -= speed;
-  //if (1=2)
+  let cells = [];
+  let boxes = [];
+  let startXY = Math.floor(p.globx / 128);
+  let endXY = Math.floor((p.globx + 32 - 1e-6) / 128);
+  
+  for (let xc = startXY; xc <= endXX; x++) {
+  for (let yc = startXY; yc <= endXY; y++) {
+      cells.push([xc, yc]);
+    }
+  };
+  for (let cell of cells) { 
+    boxes.push(collisionBoxes[cell[0]][cell[1]])
+  };
+  console.log(boxes)
+  for (let box of boxes) { 
+  if (p.globx+dx < box[2] &&
+        p.globx+dx + 32 > box[0] &&
+        p.globy+dy < box[3] &&
+        p.globy+dy + 32 > box[1]) {
+  dx = 0;
+  dy = 0;
+  }
+  };
+  
   p.globx -= dx;
   p.globy -= dy;
   tickUpdate(movingSquares, dx, dy, p);
@@ -103,7 +122,7 @@ p.draw = () => {
   p.noStroke();
   p.rectMode(p.CENTER);
   p.rect(p.player.x, p.player.y, p.player.sqsize, p.player.sqsize);
-}
+} 
 
 }
 
