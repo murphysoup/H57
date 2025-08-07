@@ -33,21 +33,21 @@ p.addbox = (g,x1,y1,x2,y2) => {
   
 p.buildlevel = (lvl,sx,sy) => {
   movingSquares = [];
-  collisionGrid = [];
+  walls = [];
   let spawnx = sx+p.width / 2;
   let spawny = sy+p.height / 2;
   p.globx = spawnx;
   p.globy = spawny;
   
   if (lvl == 1) {
-  p.maxgridoffset = -2000;
-  collisionGrid = Array.from({ length: 10 }, () =>
-  Array.from({ length: 10 }, () => [])
-  );
+//  p.maxgridoffset = -2000;
+ // collisionGrid = Array.from({ length: 10 }, () =>
+  //Array.from({ length: 10 }, () => [])
+  //);
 
   movingSquares.push(new MovingSquare(-2000-spawnx, -2000-spawny, 4000, p.texturesmap));
    
-  collisionGrid[2,3].push(1)
+  walls.push([2,3])
   
   for (let i = 0; i < numSquares; i++) {
     let x = p.random(-2000-spawnx, 2000-spawny);
@@ -110,9 +110,10 @@ p.draw = () => {
   //      p.globx+dx + 32 > box[0] &&
    //     p.globy+dy < box[3] &&
      //   p.globy+dy + 32 > box[1]) {
-    console.log(cell[0]+'fatty'+cell[1]);
+   // console.log(cell[0]+'fatty'+cell[1]);
 
-   if (collisionGrid[cell[0]][cell[1]] == 1) {
+ //  if (walls.includes([cell[0],cell[1]])) {
+  if (walls.some(wall => wall[0] === cell[0] && wall[1] === cell[1])) {
   console.log("freaky")
   dx = 0;
   dy = 0;
