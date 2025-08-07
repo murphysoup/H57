@@ -117,7 +117,7 @@ p.draw = () => {
 
  //  if (walls.includes([cell[0],cell[1]])) {
   if (walls.some(wall => wall[0] === cell[0] && wall[1] === cell[1])) {
-  collisiondetected = True
+  collisiondetected = 1
   console.log("freaky");
   dx2 = 0;
   dy2 = 0;
