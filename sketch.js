@@ -87,7 +87,7 @@ p.draw = () => {
   if (p.keyIsDown(83)) dy -= speed;
   if (p.keyIsDown(65)) dx += speed;
   if (p.keyIsDown(68)) dx -= speed;
-  if (1=2)
+  //if (1=2)
   p.globx -= dx;
   p.globy -= dy;
   tickUpdate(movingSquares, dx, dy, p);
