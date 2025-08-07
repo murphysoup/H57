@@ -121,6 +121,7 @@ p.draw = () => {
   dy2 = 0;
   }
   };
+  console.log(dx2)
   dx = dx2
   dy = dy2
   p.globx -= dx;
