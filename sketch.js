@@ -68,7 +68,7 @@ p.setup = () => {
   };
   p.textSize(32);
   p.fill(0); 
-  p.buildlevel(1,-2000,-2000)  
+  p.buildlevel(1,0,0)  
 
 
   }
