@@ -91,8 +91,8 @@ p.draw = () => {
   if (p.keyIsDown(68)) dx2 -= speed;
   let cells = [];
   let boxes = [];
-  let globxold = globx;
-  let globyold = globy;
+  let globxold = p.globx;
+  let globyold = p.globy;
   p.globx -= dx;
   p.globy -= dy;
   let startX = Math.floor((p.globx +1)/ 128);
