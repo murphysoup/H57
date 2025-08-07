@@ -115,8 +115,8 @@ p.draw = () => {
  //  if (walls.includes([cell[0],cell[1]])) {
   if (walls.some(wall => wall[0] === cell[0] && wall[1] === cell[1])) {
   console.log("freaky")
-  dx = 0;
-  dy = 0;
+  dx = -dx;
+  dy = -dy;
   }
   };
   
