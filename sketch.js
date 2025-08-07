@@ -90,8 +90,8 @@ p.draw = () => {
   let startXY = Math.floor(p.globx / 128);
   let endXY = Math.floor((p.globx + 32 - 1e-6) / 128);
   
-  for (let xc = startXY; xc <= endXX; x++) {
-  for (let yc = startXY; yc <= endXY; y++) {
+  for (let xc = startXY; xc <= endXY; xc++) {
+  for (let yc = startXY; yc <= endXY; yc++) {
       cells.push([xc, yc]);
     }
   };
