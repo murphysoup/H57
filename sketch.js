@@ -25,23 +25,33 @@ p.preload = () => {
   p.texturesmap = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/download_33_1_usl3ii.jpg');
 };
 
+p.addbox = (g,x1,y1,x2,y2) => {
+ g[floor(x1/128)][floor(y1/128)].append([x1,y1,x2,y2])
+ 
+}
   
 p.buildlevel = (lvl,sx,sy) => {
   movingSquares = [];
+  collisionGrid = [];
   let spawnx = sx+p.width / 2;
   let spawny = sy+p.height / 2;
   p.globx = spawnx;
   p.globy = spawny;
   
   if (lvl == 1) {
+  p.maxgridoffset = 100;
+  const result = Array.from({ length: 10 }, () =>
+  Array.from({ length: 10 }, () => [])
+  );
+   
   movingSquares.push(new MovingSquare(-2000-spawnx, -2000-spawny, 4000, p.texturesmap));
-
+  p.addbox(collisionGrid,100,100,200,300);
+  console.log(collisionGrid)
   for (let i = 0; i < numSquares; i++) {
     let x = p.random(2000-spawnx, 2000-spawny);
     let y = p.random(-2000-spawnx, 2000-spawny);
     let sqsize = 20;
     let tex = p.texturesmap;
-    console.log(tex)
     movingSquares.push(new MovingSquare(x, y, sqsize, tex));
   }
 }
@@ -77,6 +87,7 @@ p.draw = () => {
   if (p.keyIsDown(83)) dy -= speed;
   if (p.keyIsDown(65)) dx += speed;
   if (p.keyIsDown(68)) dx -= speed;
+  if (1=2)
   p.globx -= dx;
   p.globy -= dy;
   tickUpdate(movingSquares, dx, dy, p);
