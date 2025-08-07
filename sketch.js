@@ -27,7 +27,7 @@ p.preload = () => {
 };
 
 p.addbox = (g,x1,y1,x2,y2) => {
- g[Math.floor(x1/128)][Math.floor(y1/128)].append([x1,y1,x2,y2])
+ g[Math.floor(x1/128)][Math.floor(y1/128)].push([x1,y1,x2,y2])
  
 }
   
