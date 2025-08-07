@@ -105,7 +105,7 @@ p.draw = () => {
   //  boxes.push(collisionGrid[cell[0]][cell[1]])
   //};
   //console.log(boxes);
- console.log(collisionGrid[cell[0]][cell[1])
+ console.log(collisionGrid[cell[0]][cell[1]])
   for (let cell of cells) { 
  // if (p.globx+dx < box[2] &&
   //      p.globx+dx + 32 > box[0] &&
