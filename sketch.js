@@ -91,10 +91,10 @@ p.draw = () => {
   if (p.keyIsDown(68)) dx2 -= speed;
   let cells = [];
   let boxes = [];
-  let startX = Math.floor((p.globx+dx2 )/ 128);
-  let startY = Math.floor((p.globy+dy2 )/ 128);
-  let endX = Math.floor((p.globx+dx2 + 32) / 128);
-  let endY = Math.floor((p.globy+dy2 + 32) / 128);
+  let startX = Math.floor((p.globx+dx2 +1)/ 128);
+  let startY = Math.floor((p.globy+dy2 +1)/ 128);
+  let endX = Math.floor((p.globx+dx2 + 32-1) / 128);
+  let endY = Math.floor((p.globy+dy2 + 32-1) / 128);
   
   for (let xc = startX; xc <= endX; xc++) {
   for (let yc = startY; yc <= endY; yc++) {
