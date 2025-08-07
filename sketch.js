@@ -20,6 +20,7 @@ const sketch = (p) => {
 
 let player;
 let movingSquares = [];
+let collisionGrid = [];
 
 p.preload = () => {
   p.texturesmap = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/download_33_1_usl3ii.jpg');
