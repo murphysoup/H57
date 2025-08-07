@@ -115,19 +115,23 @@ p.draw = () => {
    // console.log(cell[0]+'fatty'+cell[1]);
 
  //  if (walls.includes([cell[0],cell[1]])) {
+  let collisiondetected = 0
   if (walls.some(wall => wall[0] === cell[0] && wall[1] === cell[1])) {
-  console.log("freaky")
+  let collisiondetected = True
+  console.log("freaky");
   dx2 = 0;
   dy2 = 0;
   }
   };
-  console.log(dx2)
-  dx = dx2
-  dy = dy2
+  console.log(dx2);
+  dx = dx2;
+  dy = dy2;
+
+  if (collisiondetected === 0) {
   p.globx -= dx;
   p.globy -= dy;
-  tickUpdate(movingSquares, dx, dy, p);
-
+  tickUpdate(movingSquares, dx, dy, p)
+  }
   for (let sq of movingSquares) {
     sq.display(p);
   }
