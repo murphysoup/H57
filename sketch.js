@@ -85,10 +85,10 @@ p.draw = () => {
   let dy2 = 0;
   let dx = 0;
   let dy = 0;
-  if (p.keyIsDown(87)) dy2 += speed;
-  if (p.keyIsDown(83)) dy2 -= speed;
-  if (p.keyIsDown(65)) dx2 += speed;
-  if (p.keyIsDown(68)) dx2 -= speed;
+  if (p.keyIsDown(87)) dy += speed;
+  if (p.keyIsDown(83)) dy -= speed;
+  if (p.keyIsDown(65)) dx += speed;
+  if (p.keyIsDown(68)) dx -= speed;
   let cells = [];
   let boxes = [];
   let globxold = p.globx;
@@ -128,8 +128,7 @@ p.draw = () => {
   }
   };
   console.log(dx2);
-  dx = dx2;
-  dy = dy2;
+
 
 
 
@@ -137,7 +136,7 @@ p.draw = () => {
   
   for (let sq of movingSquares) {
     sq.display(p);
-  }
+  };
   p.text("coords: " + p.globx + "," + p.globy, 50, 100);
 
   p.fill(255, 50, 50);
