@@ -81,18 +81,20 @@ p.setup = () => {
 p.draw = () => {
   p.background(240);
 
+  let dx2 = 0;
+  let dy2 = 0;
   let dx = 0;
   let dy = 0;
-  if (p.keyIsDown(87)) dy += speed;
-  if (p.keyIsDown(83)) dy -= speed;
-  if (p.keyIsDown(65)) dx += speed;
-  if (p.keyIsDown(68)) dx -= speed;
+  if (p.keyIsDown(87)) dy2 += speed;
+  if (p.keyIsDown(83)) dy2 -= speed;
+  if (p.keyIsDown(65)) dx2 += speed;
+  if (p.keyIsDown(68)) dx2 -= speed;
   let cells = [];
   let boxes = [];
-  let startX = Math.floor((p.globx+dx )/ 128);
-  let startY = Math.floor((p.globy+dy )/ 128);
-  let endX = Math.floor((p.globx+dx + 32) / 128);
-  let endY = Math.floor((p.globy+dy + 32) / 128);
+  let startX = Math.floor((p.globx+dx2 )/ 128);
+  let startY = Math.floor((p.globy+dy2 )/ 128);
+  let endX = Math.floor((p.globx+dx2 + 32) / 128);
+  let endY = Math.floor((p.globy+dy2 + 32) / 128);
   
   for (let xc = startX; xc <= endX; xc++) {
   for (let yc = startY; yc <= endY; yc++) {
@@ -115,11 +117,12 @@ p.draw = () => {
  //  if (walls.includes([cell[0],cell[1]])) {
   if (walls.some(wall => wall[0] === cell[0] && wall[1] === cell[1])) {
   console.log("freaky")
-  dx = -dx;
-  dy = -dy;
+  dx2 = 0;
+  dy2 = 0;
   }
   };
-  
+  dx = dx2
+  dy = dy2
   p.globx -= dx;
   p.globy -= dy;
   tickUpdate(movingSquares, dx, dy, p);
