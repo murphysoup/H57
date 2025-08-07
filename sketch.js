@@ -40,11 +40,12 @@ p.buildlevel = (lvl,sx,sy) => {
   p.globy = spawny;
   
   if (lvl == 1) {
-  p.maxgridoffset = 100;
+  p.maxgridoffset = 10;
   const result = Array.from({ length: 10 }, () =>
   Array.from({ length: 10 }, () => [])
   );
-   
+  console.log(collisionGrid)
+
   movingSquares.push(new MovingSquare(-2000-spawnx, -2000-spawny, 4000, p.texturesmap));
   p.addbox(collisionGrid,100,100,200,300);
   console.log(collisionGrid)
