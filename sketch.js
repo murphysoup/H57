@@ -40,15 +40,17 @@ p.buildlevel = (lvl,sx,sy) => {
   p.globy = spawny;
   
   if (lvl == 1) {
-  p.maxgridoffset = 10;
+  p.maxgridoffset = -2000;
   collisionGrid = Array.from({ length: 10 }, () =>
   Array.from({ length: 10 }, () => [])
   );
 
   movingSquares.push(new MovingSquare(-2000-spawnx, -2000-spawny, 4000, p.texturesmap));
-  p.addbox(collisionGrid,100,100,200,300);
+   
+  collisionGrid[2,3].push(1)
+  
   for (let i = 0; i < numSquares; i++) {
-    let x = p.random(2000-spawnx, 2000-spawny);
+    let x = p.random(-2000-spawnx, 2000-spawny);
     let y = p.random(-2000-spawnx, 2000-spawny);
     let sqsize = 20;
     let tex = p.texturesmap;
@@ -87,27 +89,29 @@ p.draw = () => {
   if (p.keyIsDown(68)) dx -= speed;
   let cells = [];
   let boxes = [];
-  let startXY = Math.floor(p.globx / 128);
-  let endXY = Math.floor((p.globx + 32 - 1e-6) / 128);
+  let startX = Math.floor(p.globx+dx / 128);
+  let startY = Math.floor(p.globy+dy / 128);
+  let endX = Math.floor((p.globx+dx + 32 - 1e-6) / 128);
+  let endY = Math.floor((p.globy+dy + 32 - 1e-6) / 128);
   
-  for (let xc = startXY; xc <= endXY; xc++) {
-  for (let yc = startXY; yc <= endXY; yc++) {
+  for (let xc = startX; xc <= endX; xc++) {
+  for (let yc = startY; yc <= endY; yc++) {
       cells.push([xc, yc]);
     }
   };
-  console.log(p.globx);
-   console.log(p.globy);
 
-  console.log(collisionGrid);
+  //console.log(collisionGrid);
+ // for (let cell of cells) { 
+  //  boxes.push(collisionGrid[cell[0]][cell[1]])
+  //};
+  //console.log(boxes);
   for (let cell of cells) { 
-    boxes.push(collisionGrid[cell[0]][cell[1]])
-  };
-  console.log(boxes);
-  for (let box of boxes) { 
-  if (p.globx+dx < box[2] &&
-        p.globx+dx + 32 > box[0] &&
-        p.globy+dy < box[3] &&
-        p.globy+dy + 32 > box[1]) {
+ // if (p.globx+dx < box[2] &&
+  //      p.globx+dx + 32 > box[0] &&
+   //     p.globy+dy < box[3] &&
+     //   p.globy+dy + 32 > box[1]) {
+   if (collisionGrid[cell[0]][cell[1]] = 1) {
+  console.log("freaky")
   dx = 0;
   dy = 0;
   }
