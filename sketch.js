@@ -37,6 +37,7 @@ p.buildlevel = (lvl,sx,sy) => {
   walls = [];
   let spawnx = sx+p.width / 2;
   let spawny = sy+p.height / 2;
+  p.inventoryopen = false
   p.globx = spawnx;
   p.globy = spawny;
   
@@ -77,9 +78,11 @@ p.setup = () => {
   p.buildlevel(1,0,0)  
 
 
-  }
+  };
 
-
+p.OpenInventory() = () => {
+if (p.inventoryopen) {p.inventoryopen = false} else {p.inventoryopen = true}
+};
 
 
 p.draw = () => {
@@ -147,6 +150,7 @@ p.draw = () => {
   p.noStroke();
   p.rectMode(p.CENTER);
   p.rect(p.player.x, p.player.y, p.player.sqsize, p.player.sqsize);
+  rect(x, y, width, height);
 } 
 
 };
