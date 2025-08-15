@@ -76,7 +76,7 @@ p.setup = () => {
     y: p.height / 2,
     sqsize: 32,
   };
-  inventorybutton = createButton('Open Inventory');
+  inventorybutton = p.createButton('Open Inventory');
   inventorybutton.position(150, 200);
   myButton.mousePressed(OpenInventory());
   p.textSize(32);
@@ -147,14 +147,14 @@ p.draw = () => {
 //  for (let sq of movingSquares) {
   //  sq.display(p);
  // };
-  drawSprites();
+  p.drawSprites();
   p.text("coords: " + p.globx + "," + p.globy, 50, 100);
 
   p.fill(255, 50, 50);
   p.noStroke();
   p.rectMode(p.CENTER);
   p.rect(p.player.x, p.player.y, p.player.sqsize, p.player.sqsize);
-  rect(x, y, width, height);
+  p.rect(x, y, width, height);
 } 
 
 };
