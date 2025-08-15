@@ -141,9 +141,10 @@ p.draw = () => {
 
   tickUpdate(movingSquares, dx, dy, p);
 
-  for (let sq of movingSquares) {
-    sq.display(p);
-  };
+//  for (let sq of movingSquares) {
+  //  sq.display(p);
+ // };
+  drawSprites();
   p.text("coords: " + p.globx + "," + p.globy, 50, 100);
 
   p.fill(255, 50, 50);
