@@ -21,6 +21,7 @@ const sketch = (p) => {
 let player;
 let movingSquares = [];
 let walls = [];
+let inventorybutton;
 
 p.preload = () => {
   p.texturesmap = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/download_33_1_usl3ii.jpg');
@@ -68,6 +69,9 @@ p.setup = () => {
     y: p.height / 2,
     sqsize: 32,
   };
+  inventorybutton = createButton('Open Inventory');
+  inventorybutton.position(150, 200);
+  myButton.mousePressed(OpenInventory());
   p.textSize(32);
   p.fill(0); 
   p.buildlevel(1,0,0)  
