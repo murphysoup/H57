@@ -62,7 +62,7 @@ p.buildlevel = (lvl,sx,sy) => {
 }
 
  
-p.OpenInventory() = () => {
+p.OpenInventory = () => {
 if (p.inventoryopen) {p.inventoryopen = false} else {p.inventoryopen = true}
 };
 
