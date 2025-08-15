@@ -61,6 +61,12 @@ p.buildlevel = (lvl,sx,sy) => {
 }
 }
 
+ 
+p.OpenInventory() = () => {
+if (p.inventoryopen) {p.inventoryopen = false} else {p.inventoryopen = true}
+};
+
+ 
 p.setup = () => {
   p.createCanvas(p.windowWidth, p.windowHeight);
   p.globx = p.width / 2;
@@ -80,9 +86,6 @@ p.setup = () => {
 
   };
 
-p.OpenInventory() = () => {
-if (p.inventoryopen) {p.inventoryopen = false} else {p.inventoryopen = true}
-};
 
 
 p.draw = () => {
