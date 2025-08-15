@@ -78,7 +78,7 @@ p.setup = () => {
   };
   inventorybutton = p.createButton('Open Inventory');
   inventorybutton.position(150, 200);
-  myButton.mousePressed(OpenInventory());
+  inventorybutton.mousePressed(OpenInventory());
   p.textSize(32);
   p.fill(0); 
   p.buildlevel(1,0,0)  
