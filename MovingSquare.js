@@ -4,12 +4,12 @@ let xrizz = 40;
 
 
 export default class MovingSquare {
-  constructor(x, y, sqsize, img) {
+  constructor(x, y, sqsize, img,p) {
     this.x = x;
     this.y = y;
     this.sqsize = sqsize;
    // this.img = img;
-    this.objectsprite = createSprite(x, y);
+    this.objectsprite = p.createSprite(x, y);
     this.objectsprite.addImage(img);
     this.objectsprite.scale = sqsize / img.width;
   }
