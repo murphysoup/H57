@@ -8,13 +8,18 @@ export default class MovingSquare {
     this.x = x;
     this.y = y;
     this.sqsize = sqsize;
-    this.img = img;
+   // this.img = img;
+    this.objectsprite = createSprite(x, y);
+    this.objectsprite.addImage(img);
+    this.objectsprite.scale = sqsize / img.width;
   }
 
   update(dx, dy,p) {
 
     this.x += dx;
     this.y += dy;
+    this.objectsprite.position.x = this.x;
+    this.objectsprite.position.y = this.y;
   }
 
   display(p) {
