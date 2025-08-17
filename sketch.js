@@ -81,8 +81,8 @@ p.setup = () => {
   inventorybutton.mousePressed(p.OpenInventory());
   p.textSize(32);
   p.fill(0); 
-  p.buildlevel(1,0,0);  
   p.createSprite = window.createSprite;
+  p.buildlevel(1,0,0);  
   };
 
 
