@@ -3,6 +3,7 @@
 let xrizz = 40;
 
 
+
 export default class MovingSquare {
   constructor(x, y, sqsize, img,p) {
     this.x = x;
