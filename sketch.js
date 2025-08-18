@@ -152,11 +152,11 @@ p.draw = () => {
   //  sq.display(p);
  // };
   p.drawSprites();
-  g = p.text("coords: " + p.globx + "," + p.globy, 50, 100);
+  let g = p.text("coords: " + p.globx + "," + p.globy, 50, 100);
   g.textSize(10)
-  hp = p.text("HP: " + p.hp, 450, 50);
+  let hp = p.text("HP: " + p.hp, 450, 50);
   hp.textSize(10)
-  hunger = p.text("Hunger Level: " + p.hunger, 450, 100);
+  let hunger = p.text("Hunger Level: " + p.hunger, 450, 100);
   hunger.textSize(10)
 
 
