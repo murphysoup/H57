@@ -71,7 +71,6 @@ p.setup = () => {
   p.createCanvas(p.windowWidth, p.windowHeight);
  
   p.createSprite = p5.prototype.createSprite;
-  console.log(p.createSprite)
   p.hp = 100
   p.hunger = 100
   p.globx = p.width / 2;
@@ -136,14 +135,14 @@ p.draw = () => {
  //  if (walls.includes([cell[0],cell[1]])) {
   if (walls.some(wall => wall[0] === cell[0] && wall[1] === cell[1])) {
   collisiondetected = 1
-  console.log("freaky");
+//  console.log("freaky");
   dx = 0
   dy = 0
   p.globx = globxold;
   p.globy = globyold;
   }
   };
-  console.log(dx2);
+ // console.log(dx2);
 
 
   tickUpdate(movingSquares, dx, dy, p);
