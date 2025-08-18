@@ -69,8 +69,9 @@ if (p.inventoryopen) {p.inventoryopen = false} else {p.inventoryopen = true}
  
 p.setup = () => {
   p.createCanvas(p.windowWidth, p.windowHeight);
+ 
   p.createSprite = p5.prototype.createSprite;
-
+  console.log(p.createSprite)
   p.globx = p.width / 2;
   p.globy = p.height / 2;
   p.player = {
