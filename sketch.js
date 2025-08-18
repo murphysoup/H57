@@ -47,7 +47,7 @@ p.buildlevel = (lvl,sx,sy) => {
   //Array.from({ length: 10 }, () => [])
   //);
 
-  movingSquares.push(new MovingSquare(-2000-spawnx, -2000-spawny, 4000, p.texturesmap));
+  movingSquares.push(new MovingSquare(-2000-spawnx, -2000-spawny, 4000, p.texturesmap,p));
    
   walls.push([2,3])
   
@@ -56,7 +56,7 @@ p.buildlevel = (lvl,sx,sy) => {
     let y = p.random(-2000-spawnx, 2000-spawny);
     let sqsize = 20;
     let tex = p.texturesmap;
-    movingSquares.push(new MovingSquare(x, y, sqsize, tex));
+    movingSquares.push(new MovingSquare(x, y, sqsize, tex,p));
   }
 }
 }
