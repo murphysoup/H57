@@ -72,6 +72,8 @@ p.setup = () => {
  
   p.createSprite = p5.prototype.createSprite;
   console.log(p.createSprite)
+  p.hp = 100
+  p.hunger = 100
   p.globx = p.width / 2;
   p.globy = p.height / 2;
   p.player = {
@@ -150,13 +152,20 @@ p.draw = () => {
   //  sq.display(p);
  // };
   p.drawSprites();
-  p.text("coords: " + p.globx + "," + p.globy, 50, 100);
+  g = p.text("coords: " + p.globx + "," + p.globy, 50, 100);
+  g.textSize(10)
+  hp = p.text("HP: " + p.hp, 450, 50);
+  hp.textSize(10)
+  hunger = p.text("Hunger Level: " + p.hunger, 450, 100);
+  hunger.textSize(10)
 
+
+
+ 
   p.fill(255, 50, 50);
   p.noStroke();
   p.rectMode(p.CENTER);
   p.rect(p.player.x, p.player.y, p.player.sqsize, p.player.sqsize);
-  p.rect(x, y, width, height);
 } 
 
 };
