@@ -50,7 +50,7 @@ p.buildlevel = (lvl,sx,sy) => {
    
   movingSquares.push(new MovingSquare(-160-spawnx, -160-spawny, 320, p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.jpg'),p));
 
-  movingSquares.push(new MovingSquare(-1000-spawnx, -1000-spawny, 2000, p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.jpg'),p));
+  //movingSquares.push(new MovingSquare(-1000-spawnx, -1000-spawny, 2000, p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.jpg'),p));
    
   walls.push([2,3])
   
