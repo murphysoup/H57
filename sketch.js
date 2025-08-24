@@ -114,9 +114,11 @@ p.draw = () => {
   if (p.keyIsDown(68)) dx -= speed;
   //let cells = [];
   //let boxes = [];
+ 
   let globxold = p.globx;
   let globyold = p.globy;
-
+  p.globxn = p.globx-dx;
+  p.globyn = p.globy-dy;
   //let startX = Math.floor((p.globx +1)/ 128);
   //let startY = Math.floor((p.globy +1)/ 128);
  // let endX = Math.floor((p.globx + 32-1) / 128);
@@ -153,7 +155,8 @@ p.draw = () => {
             p.globx + 2*dx + 31 > wall[0][0] &&
             p.globy + 1 < wall[1][1] &&
             p.globy + 31 > wall[0][1]) {
-            dx = 0; // stop horizontal movement
+            dx = 0 // stop horizontal movement
+            p.globxn=p.globx
         }
 
         // --- Handle Y movement ---
@@ -161,7 +164,9 @@ p.draw = () => {
             p.globx + 31 > wall[0][0] &&
             p.globy + 2*dy + 1 < wall[1][1] &&
             p.globy + 2*dy + 31 > wall[0][1]) {
-            dy = 0; // stop vertical movement
+            dy = 0 // stop vertical movement
+            p.globyn=p.globy
+
         }
 
      
@@ -169,8 +174,9 @@ p.draw = () => {
   });
 
 
-  p.globx -= dx;
-  p.globy -= dy;
+  p.globx=p.globxn;
+  p.globy=p.globyn;
+
  
 
 
