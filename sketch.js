@@ -2,7 +2,6 @@
 
 let player;
 let movingSquares = [];
-let speed = 2;
 let numSquares = 1000;
 let textures = [];
 let texturesmap;
@@ -97,7 +96,8 @@ p.setup = () => {
 
 p.draw = () => {
   p.background(240);
-
+  let speed = 2;
+  if (p.keyIsDown(16)) speed = 10;
   let dx2 = 0;
   let dy2 = 0;
   let dx = 0;
