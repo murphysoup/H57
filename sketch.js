@@ -23,7 +23,7 @@ let walls = [];
 let inventorybutton;
 
 p.preload = () => {
-  p.map1s = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.jpg')
+  p.map1s = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.png')
   p.texturesmap = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/download_33_1_usl3ii.jpg');
 };
 
@@ -47,7 +47,7 @@ p.buildlevel = (lvl,sx,sy) => {
   //Array.from({ length: 10 }, () => [])
   //);
    
-  movingSquares.push(new MovingSquare(-2048+spawnx, -2048+spawny, 4096, p.map1s,p));
+  movingSquares.push(new MovingSquare(spawnx, spawny, 4096, p.map1s,p));
  // movingSquares.push(new MovingSquare(-160-spawnx, -160-spawny, 320, p.texturesmap,p));
 
   //movingSquares.push(new MovingSquare(-1000-spawnx, -1000-spawny, 2000, p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.jpg'),p));
