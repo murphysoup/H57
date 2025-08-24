@@ -48,7 +48,7 @@ p.buildlevel = (lvl,sx,sy) => {
   //Array.from({ length: 10 }, () => [])
   //);
    
-  movingSquares.push(new MovingSquare(-1600-spawnx, -1600-spawny, 3200, p.map1s,p));
+  movingSquares.push(new MovingSquare(-1000-spawnx, -1000-spawny, 3000, p.map1s,p));
  // movingSquares.push(new MovingSquare(-160-spawnx, -160-spawny, 320, p.texturesmap,p));
 
   //movingSquares.push(new MovingSquare(-1000-spawnx, -1000-spawny, 2000, p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.jpg'),p));
@@ -156,11 +156,11 @@ p.draw = () => {
  // };
   p.drawSprites();
   let g = p.text("coords: " + p.globx + "," + p.globy, 50, 200);
-  g.textSize(10)
+  g.textSize(20)
   let hp = p.text("HP: " + p.hp, 50, 50);
-  hp.textSize(10)
+  hp.textSize(20)
   let hunger = p.text("Hunger Level: " + p.hunger, 50, 100);
-  hunger.textSize(10)
+  hunger.textSize(20)
 
 
 
