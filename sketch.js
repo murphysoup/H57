@@ -115,10 +115,10 @@ p.draw = () => {
   //let cells = [];
   //let boxes = [];
  
-  let globxold = p.globx;
-  let globyold = p.globy;
-  p.globxn = p.globx-dx;
-  p.globyn = p.globy-dy;
+//  let globxold = p.globx;
+//  let globyold = p.globy;
+ // p.globxn = p.globx-dx;
+//  p.globyn = p.globy-dy;
   //let startX = Math.floor((p.globx +1)/ 128);
   //let startY = Math.floor((p.globy +1)/ 128);
  // let endX = Math.floor((p.globx + 32-1) / 128);
@@ -151,21 +151,21 @@ p.draw = () => {
 //  p.globy = globyold;
 
 
-          if (p.globx + 2*dx + 1 < wall[1][0] &&
-            p.globx + 2*dx + 31 > wall[0][0] &&
+          if (p.globx -dx + 1 < wall[1][0] &&
+            p.globx -dx + 31 > wall[0][0] &&
             p.globy + 1 < wall[1][1] &&
             p.globy + 31 > wall[0][1]) {
             dx = 0 // stop horizontal movement
-            p.globxn=p.globx
+         //   p.globxn=p.globx
         }
 
         // --- Handle Y movement ---
         if (p.globx + 1 < wall[1][0] &&
             p.globx + 31 > wall[0][0] &&
-            p.globy + 2*dy + 1 < wall[1][1] &&
-            p.globy + 2*dy + 31 > wall[0][1]) {
+            p.globy -dy + 1 < wall[1][1] &&
+            p.globy -dy + 31 > wall[0][1]) {
             dy = 0 // stop vertical movement
-            p.globyn=p.globy
+        //    p.globyn=p.globy
 
         }
 
@@ -174,8 +174,8 @@ p.draw = () => {
   });
 
 
-  p.globx=p.globxn;
-  p.globy=p.globyn;
+  p.globx += dx;
+  p.globy += dy;
 
  
 
