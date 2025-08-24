@@ -31,7 +31,7 @@ p.preload = () => {
 };
 
 p.addbox = (g,x1,y1,x2,y2) => {
- g.push([[x1,y1],[x2,y2],[Math.sqrt(((x1-x2)**2)+((y1-y2)**2))+100]])
+ g.push([[x1,y1],[x2,y2],Math.sqrt(((x1-x2)**2)+((y1-y2)**2))+100])
  
 }
 
@@ -136,7 +136,7 @@ p.draw = () => {
   //console.log(boxes);
   let collisiondetected = 0;
   wallboxes.forEach((wall) => { 
-  console.log(wall[0])
+  //console.log(wall[0])
   if (p.dist(wall[0][0], wall[0][1], p.globx, p.globy) < wall[3]) { 
    console.log('soup1')
     if (p.globx+dx < wall[1][0] &&
