@@ -136,8 +136,8 @@ p.draw = () => {
   //console.log(boxes);
   let collisiondetected = 0;
   wallboxes.forEach((wall) => { 
-  console.log(p.dist(wall[0][0], wall[0][1], p.globx, p.globy))
-  if (p.dist(wall[0][0], wall[0][1], p.globx, p.globy) < wall[3]) { 
+ // console.log(p.dist(wall[0][0], wall[0][1], p.globx, p.globy))
+  if (p.dist(wall[0][0], wall[0][1], p.globx, p.globy) < wall[2]) { 
    console.log('soup1')
     if (p.globx+dx < wall[1][0] &&
         p.globx+dx + 32 > wall[0][0] &&
