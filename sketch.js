@@ -174,8 +174,8 @@ p.draw = () => {
   });
 
 
-  p.globx += dx;
-  p.globy += dy;
+  p.globx -= dx;
+  p.globy -= dy;
 
  
 
