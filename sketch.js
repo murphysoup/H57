@@ -139,10 +139,10 @@ p.draw = () => {
  // console.log(p.dist(wall[0][0], wall[0][1], p.globx, p.globy))
   if (p.dist(wall[0][0], wall[0][1], p.globx, p.globy) < wall[2]) { 
    console.log('soup1')
-    if (p.globx+dx < wall[1][0] &&
-        p.globx+dx + 32 > wall[0][0] &&
-        p.globy+dy < wall[1][1] &&
-        p.globy+dy + 32 > wall[0][1]) {
+    if (p.globx+dx+1 < wall[1][0] &&
+        p.globx+dx + 31 > wall[0][0] &&
+        p.globy+dy+1 < wall[1][1] &&
+        p.globy+dy + 31 > wall[0][1]) {
      console.log('soup');
    collisiondetected = 1;
   dx = 0;
