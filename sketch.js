@@ -48,7 +48,8 @@ p.buildlevel = (lvl,sx,sy) => {
   //Array.from({ length: 10 }, () => [])
   //);
    
-  movingSquares.push(new MovingSquare(-160-spawnx, -160-spawny, 320, p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.jpg'),p));
+ // movingSquares.push(new MovingSquare(-160-spawnx, -160-spawny, 320, p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.jpg'),p));
+  movingSquares.push(new MovingSquare(-160-spawnx, -160-spawny, 320, p.texturesmap,p));
 
   //movingSquares.push(new MovingSquare(-1000-spawnx, -1000-spawny, 2000, p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.jpg'),p));
    
@@ -154,7 +155,7 @@ p.draw = () => {
   //  sq.display(p);
  // };
   p.drawSprites();
-  let g = p.text("coords: " + p.globx + "," + p.globy, 50, 100);
+  let g = p.text("coords: " + p.globx + "," + p.globy, 50, 200);
   g.textSize(10)
   let hp = p.text("HP: " + p.hp, 50, 50);
   hp.textSize(10)
