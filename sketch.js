@@ -47,6 +47,8 @@ p.buildlevel = (lvl,sx,sy) => {
  // collisionGrid = Array.from({ length: 10 }, () =>
   //Array.from({ length: 10 }, () => [])
   //);
+   
+  movingSquares.push(new MovingSquare(-160-spawnx, -160-spawny, 320, p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.jpg'),p));
 
   movingSquares.push(new MovingSquare(-16000-spawnx, -16000-spawny, 32000, p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.jpg'),p));
    
@@ -154,9 +156,9 @@ p.draw = () => {
   p.drawSprites();
   let g = p.text("coords: " + p.globx + "," + p.globy, 50, 100);
   g.textSize(10)
-  let hp = p.text("HP: " + p.hp, 450, 50);
+  let hp = p.text("HP: " + p.hp, 50, 50);
   hp.textSize(10)
-  let hunger = p.text("Hunger Level: " + p.hunger, 450, 100);
+  let hunger = p.text("Hunger Level: " + p.hunger, 50, 100);
   hunger.textSize(10)
 
 
