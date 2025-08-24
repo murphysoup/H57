@@ -146,7 +146,7 @@ p.draw = () => {
   p.globx = globxold;
   p.globy = globyold;
   }
-  });
+  }});
 
 
  
