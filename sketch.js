@@ -112,47 +112,65 @@ p.draw = () => {
   if (p.keyIsDown(83)) dy -= speed;
   if (p.keyIsDown(65)) dx += speed;
   if (p.keyIsDown(68)) dx -= speed;
-  let cells = [];
-  let boxes = [];
+  //let cells = [];
+  //let boxes = [];
   let globxold = p.globx;
   let globyold = p.globy;
-  p.globx -= dx;
-  p.globy -= dy;
-  let startX = Math.floor((p.globx +1)/ 128);
-  let startY = Math.floor((p.globy +1)/ 128);
-  let endX = Math.floor((p.globx + 32-1) / 128);
-  let endY = Math.floor((p.globy + 32-1) / 128);
-  
-  for (let xc = startX; xc <= endX; xc++) {
-  for (let yc = startY; yc <= endY; yc++) {
-      cells.push([xc, yc]);
-    }
-  };
 
-  //console.log(collisionGrid);
- // for (let cell of cells) { 
-  //  boxes.push(collisionGrid[cell[0]][cell[1]])
-  //};
-  //console.log(boxes);
-  let collisiondetected = 0;
+  //let startX = Math.floor((p.globx +1)/ 128);
+  //let startY = Math.floor((p.globy +1)/ 128);
+ // let endX = Math.floor((p.globx + 32-1) / 128);
+ // let endY = Math.floor((p.globy + 32-1) / 128);
+  
+//  for (let xc = startX; xc <= endX; xc++) {
+//  for (let yc = startY; yc <= endY; yc++) {
+   //   cells.push([xc, yc]);
+ //   }
+ // };
+
   wallboxes.forEach((wall) => { 
  // console.log(p.dist(wall[0][0], wall[0][1], p.globx, p.globy))
   if (p.dist(wall[0][0], wall[0][1], p.globx, p.globy) < wall[2]) { 
    console.log('soup1')
-    if (p.globx+dx+1 < wall[1][0] &&
-        p.globx+dx + 31 > wall[0][0] &&
-        p.globy+dy+1 < wall[1][1] &&
-        p.globy+dy + 31 > wall[0][1]) {
-     console.log('soup');
-   collisiondetected = 1;
-  dx = 0;
-  dy = 0;
-  p.globx = globxold;
-  p.globy = globyold;
+
+   
+  //  if (p.globx+dx+1 < wall[1][0] &&
+  //      p.globx+dx + 31 > wall[0][0] &&
+      //  p.globy+dy+1 < wall[1][1] &&
+   //     p.globy+dy + 31 > wall[0][1]) {
+  //   console.log('soup');
+
+
+     
+  // collisiondetected = 1;
+//  dx = 0;
+ // dy = 0;
+//  p.globx = globxold;
+//  p.globy = globyold;
+
+
+          if (p.globx + dx + 1 < wall[1][0] &&
+            p.globx + dx + 31 > wall[0][0] &&
+            p.globy + 1 < wall[1][1] &&
+            p.globy + 31 > wall[0][1]) {
+            dx = 0; // stop horizontal movement
+        }
+
+        // --- Handle Y movement ---
+        if (p.globx + 1 < wall[1][0] &&
+            p.globx + 31 > wall[0][0] &&
+            p.globy + dy + 1 < wall[1][1] &&
+            p.globy + dy + 31 > wall[0][1]) {
+            dy = 0; // stop vertical movement
+        }
+
+     
   }
   }});
 
 
+  p.globx -= dx;
+  p.globy -= dy;
  
 //function isColliding(a, b) {
  // return (
