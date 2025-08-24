@@ -166,39 +166,12 @@ p.draw = () => {
 
      
   }
-  }});
+  });
 
 
   p.globx -= dx;
   p.globy -= dy;
  
-//function isColliding(a, b) {
- // return (
-  //  a.x < b.x + b.width &&
-  //  a.x + a.width > b.x &&
-  //  a.y < b.y + b.height &&
-  //  a.y + a.height > b.y
- // );
-//}
-
- 
- ///////////////////////// for (let cell of cells) { 
- // if (p.globx+dx < box[2] &&
-  //      p.globx+dx + 32 > box[0] &&
-   //     p.globy+dy < box[3] &&
-     //   p.globy+dy + 32 > box[1]) {
-   // console.log(cell[0]+'fatty'+cell[1]);
-   
-
-   
- //  if (walls.includes([cell[0],cell[1]])) {
-  //////////////////////if (walls.some(wall => wall[0] === cell[0] && wall[1] === cell[1])) {
-// ////////// collisiondetected = 1
-//  console.log("freaky");
-
-  //}
-  //};
- // console.log(dx2);
 
 
   tickUpdate(movingSquares, dx, dy, p);
