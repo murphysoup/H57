@@ -51,12 +51,12 @@ p.buildlevel = (lvl,sx,sy) => {
   //);
   p.addbox(wallboxes,100,100,200,300)
   
-  movingSquares.push(new MovingSquare(spawnx, spawny, 4096, p.map1s, map, p));
+  movingSquares.push(new MovingSquare(spawnx, spawny, 4096, p.map1s, 'map', p));
  // movingSquares.push(new MovingSquare(-160-spawnx, -160-spawny, 320, p.texturesmap,p));
 
   //movingSquares.push(new MovingSquare(-1000-spawnx, -1000-spawny, 2000, p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.jpg'),p));
   
-  movingSquares.push(new MovingSquare(160, 160, 64, p.tree1, wall, p));
+  movingSquares.push(new MovingSquare(160, 160, 64, p.tree1, 'wall', p));
 
   
   for (let i = 0; i < numSquares; i++) {
@@ -64,7 +64,7 @@ p.buildlevel = (lvl,sx,sy) => {
     let y = p.random(-2000-spawnx, 2000-spawny);
     let sqsize = 20;
     let tex = p.texturesmap;
-    movingSquares.push(new MovingSquare(x, y, sqsize, tex, map, p));
+    movingSquares.push(new MovingSquare(x, y, sqsize, tex, 'map', p));
   }
 }
 }
