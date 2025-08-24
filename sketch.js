@@ -24,8 +24,7 @@ let walls = [];
 let inventorybutton;
 
 p.preload = () => {
-  p.spritelist = []
-  p.spritelist.push(p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.jpg'))
+  p.map1s = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.jpg')
   p.texturesmap = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/download_33_1_usl3ii.jpg');
 };
 
@@ -49,7 +48,7 @@ p.buildlevel = (lvl,sx,sy) => {
   //Array.from({ length: 10 }, () => [])
   //);
    
-  movingSquares.push(new MovingSquare(-16000-spawnx, -16000-spawny, 32000, p.spritelist[0],p));
+  movingSquares.push(new MovingSquare(-16000-spawnx, -16000-spawny, 32000, p.map1s,p));
  // movingSquares.push(new MovingSquare(-160-spawnx, -160-spawny, 320, p.texturesmap,p));
 
   //movingSquares.push(new MovingSquare(-1000-spawnx, -1000-spawny, 2000, p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.jpg'),p));
@@ -86,7 +85,7 @@ p.setup = () => {
     sqsize: 32,
   };
   inventorybutton = p.createButton('Open Inventory');
-  inventorybutton.position(150, 200);
+  inventorybutton.position(250, 50);
   inventorybutton.mousePressed(p.OpenInventory());
   p.textSize(32);
   p.fill(0); 
