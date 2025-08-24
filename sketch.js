@@ -21,20 +21,23 @@ let player;
 let movingSquares = [];
 let walls = [];
 let inventorybutton;
+let wallboxes = []
+
 
 p.preload = () => {
+  p.tree1 = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1756021194/nivtree1_jrfdun.png')
   p.map1s = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.png')
   p.texturesmap = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/download_33_1_usl3ii.jpg');
 };
 
 p.addbox = (g,x1,y1,x2,y2) => {
- g[Math.floor(x1/128)][Math.floor(y1/128)].push([x1,y1,x2,y2])
+ g.push([[[x1,y1]],[x2,y2],[Math.sqrt(((x1-x2)**2)+((y1-y2)**2))+100]])
  
 }
-  
+
 p.buildlevel = (lvl,sx,sy) => {
   movingSquares = [];
-  walls = [];
+  wallboxes = [];
   let spawnx = sx+p.width / 2;
   let spawny = sy+p.height / 2;
   p.inventoryopen = false
@@ -46,20 +49,22 @@ p.buildlevel = (lvl,sx,sy) => {
  // collisionGrid = Array.from({ length: 10 }, () =>
   //Array.from({ length: 10 }, () => [])
   //);
-   
-  movingSquares.push(new MovingSquare(spawnx, spawny, 4096, p.map1s,p));
+  p.addbox(wallboxes,100,100,200,300)
+  
+  movingSquares.push(new MovingSquare(spawnx, spawny, 4096, p.map1s, map, p));
  // movingSquares.push(new MovingSquare(-160-spawnx, -160-spawny, 320, p.texturesmap,p));
 
   //movingSquares.push(new MovingSquare(-1000-spawnx, -1000-spawny, 2000, p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.jpg'),p));
-   
-  walls.push([2,3])
+  
+  movingSquares.push(new MovingSquare(160, 160, 64, p.tree1, wall, p));
+
   
   for (let i = 0; i < numSquares; i++) {
     let x = p.random(-2000-spawnx, 2000-spawny);
     let y = p.random(-2000-spawnx, 2000-spawny);
     let sqsize = 20;
     let tex = p.texturesmap;
-    movingSquares.push(new MovingSquare(x, y, sqsize, tex,p));
+    movingSquares.push(new MovingSquare(x, y, sqsize, tex, map, p));
   }
 }
 }
@@ -129,23 +134,48 @@ p.draw = () => {
   //};
   //console.log(boxes);
   let collisiondetected = 0;
-  for (let cell of cells) { 
+  wallboxes.forEach((wall) => { 
+  if (dist(wall[0][1], wall[0][1], p.globx, p.globy) < wall[3]) { 
+    if (p.globx+dx < wall[1][0] &&
+        p.globx+dx + 32 > wall[0][0] &&
+        p.globy+dy < wall[0][1] &&
+        p.globy+dy + 32 > wall[0][1]) {
+   collisiondetected = 1;
+  dx = 0;
+  dy = 0;
+  p.globx = globxold;
+  p.globy = globyold;
+  }
+  });
+
+
+ 
+//function isColliding(a, b) {
+ // return (
+  //  a.x < b.x + b.width &&
+  //  a.x + a.width > b.x &&
+  //  a.y < b.y + b.height &&
+  //  a.y + a.height > b.y
+ // );
+//}
+
+ 
+ ///////////////////////// for (let cell of cells) { 
  // if (p.globx+dx < box[2] &&
   //      p.globx+dx + 32 > box[0] &&
    //     p.globy+dy < box[3] &&
      //   p.globy+dy + 32 > box[1]) {
    // console.log(cell[0]+'fatty'+cell[1]);
+   
 
+   
  //  if (walls.includes([cell[0],cell[1]])) {
-  if (walls.some(wall => wall[0] === cell[0] && wall[1] === cell[1])) {
-  collisiondetected = 1
+  //////////////////////if (walls.some(wall => wall[0] === cell[0] && wall[1] === cell[1])) {
+// ////////// collisiondetected = 1
 //  console.log("freaky");
-  dx = 0
-  dy = 0
-  p.globx = globxold;
-  p.globy = globyold;
-  }
-  };
+
+  //}
+  //};
  // console.log(dx2);
 
 
