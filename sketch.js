@@ -117,7 +117,7 @@ p.draw = () => {
   p.m5t = p.millis()
   if (p.hp < 10) {
   p.hp += 1
-  }
+  };
   p.hunger -= 1;
   p.movingSquares.push(new MovingSquare(p.random(-1000,1000), p.random(-1000,1000), 20, p.texturesmap, 'food', p));
   }
