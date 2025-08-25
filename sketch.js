@@ -125,7 +125,7 @@ p.draw = () => {
   wallboxes.forEach((wall) => { 
  // console.log(p.dist(wall[0][0], wall[0][1], p.globx, p.globy))
   if (p.dist(wall[0][0], wall[0][1], p.globx, p.globy) < wall[2]) { 
-   console.log('soup1')
+ //  console.log('soup1')
 
    
   //  if (p.globx+dx+1 < wall[1][0] &&
