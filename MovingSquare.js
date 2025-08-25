@@ -29,10 +29,10 @@ delete(p) {
   
   update(dx, dy,p) {
 
-    this.x += dx;
-    this.y += dy;
-    this.objectsprite.position.x = this.x;
-    this.objectsprite.position.y = this.y;
+  //  this.x += dx;
+  //  this.y += dy;
+    this.objectsprite.position.x = this.x-p.globx+p.width / 2;;
+    this.objectsprite.position.y = this.y-p.globy+p.height / 2;;
     if (this.type == 'food') {console.log(p.dist(this.x,this.y,p.globx,p.globy))
     }
     if (this.type == 'food' && p.dist(this.x,this.y,p.globx,p.globy) < 30){
