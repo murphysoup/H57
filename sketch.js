@@ -17,7 +17,6 @@ import MovingSquare from './MovingSquare.js';
 const sketch = (p) => {
 
 let player;
-let p.movingSquares = [];
 let walls = [];
 let inventorybutton;
 let wallboxes = []
@@ -77,6 +76,7 @@ if (p.inventoryopen) {p.inventoryopen = false} else {p.inventoryopen = true}
 
  
 p.setup = () => {
+  p.movingSquares = [];
   p.createCanvas(p.windowWidth, p.windowHeight);
   p.m5t = 0
   p.createSprite = p5.prototype.createSprite;
