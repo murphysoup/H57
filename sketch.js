@@ -1,7 +1,6 @@
 // sketch.js
 
 let player;
-let movingSquares = [];
 let numSquares = 1000;
 let textures = [];
 let texturesmap;
@@ -18,7 +17,7 @@ import MovingSquare from './MovingSquare.js';
 const sketch = (p) => {
 
 let player;
-let movingSquares = [];
+let p.movingSquares = [];
 let walls = [];
 let inventorybutton;
 let wallboxes = []
@@ -36,7 +35,7 @@ p.addbox = (g,x1,y1,x2,y2) => {
 }
 
 p.buildlevel = (lvl,sx,sy) => {
-  movingSquares = [];
+  p.movingSquares = [];
   wallboxes = [];
   let spawnx = sx+p.width / 2;
   let spawny = sy+p.height / 2;
@@ -52,20 +51,21 @@ p.buildlevel = (lvl,sx,sy) => {
   p.addbox(wallboxes,100,100,200,300)
   console.log(wallboxes[0])
   
-  movingSquares.push(new MovingSquare(spawnx, spawny, 4096, p.map1s, 'map', p));
+  p.movingSquares.push(new MovingSquare(spawnx, spawny, 4096, p.map1s, 'map', p));
  // movingSquares.push(new MovingSquare(-160-spawnx, -160-spawny, 320, p.texturesmap,p));
 
-  //movingSquares.push(new MovingSquare(-1000-spawnx, -1000-spawny, 2000, p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.jpg'),p));
+ // movingSquares.push(new MovingSquare(-1000-spawnx, -1000-spawny, 2000, p.texturesmap,p));
   
-  movingSquares.push(new MovingSquare(160, 160, 64, p.tree1, 'wall', p));
+  p.movingSquares.push(new MovingSquare(100, 100, 100, p.texturesmap, 'wall', p));
 
   
-  for (let i = 0; i < numSquares; i++) {
-    let x = p.random(-2000-spawnx, 2000-spawny);
-    let y = p.random(-2000-spawnx, 2000-spawny);
-    let sqsize = 20;
+  for (let i = 0; i < 20; i++) {
+    let x = p.random(-1000-spawnx, 1000-spawny);
+    let y = p.random(-1000-spawnx, 1000-spawny);
+    let sqsize = 100;
     let tex = p.texturesmap;
-    movingSquares.push(new MovingSquare(x, y, sqsize, tex, 'map', p));
+    p.movingSquares.push(new MovingSquare(x, y, sqsize, tex, 'map', p));
+    p.addbox(wallboxes,x,y,x+100,y+100)
   }
 }
 }
@@ -78,10 +78,10 @@ if (p.inventoryopen) {p.inventoryopen = false} else {p.inventoryopen = true}
  
 p.setup = () => {
   p.createCanvas(p.windowWidth, p.windowHeight);
- 
+  p.m5t = 0
   p.createSprite = p5.prototype.createSprite;
-  p.hp = 100
-  p.hunger = 100
+  p.hp = 10
+  p.hunger = 10
   p.globx = p.width / 2;
   p.globy = p.height / 2;
   p.player = {
@@ -112,23 +112,15 @@ p.draw = () => {
   if (p.keyIsDown(83)) dy -= speed;
   if (p.keyIsDown(65)) dx += speed;
   if (p.keyIsDown(68)) dx -= speed;
-  //let cells = [];
-  //let boxes = [];
- 
-//  let globxold = p.globx;
-//  let globyold = p.globy;
- // p.globxn = p.globx-dx;
-//  p.globyn = p.globy-dy;
-  //let startX = Math.floor((p.globx +1)/ 128);
-  //let startY = Math.floor((p.globy +1)/ 128);
- // let endX = Math.floor((p.globx + 32-1) / 128);
- // let endY = Math.floor((p.globy + 32-1) / 128);
-  
-//  for (let xc = startX; xc <= endX; xc++) {
-//  for (let yc = startY; yc <= endY; yc++) {
-   //   cells.push([xc, yc]);
- //   }
- // };
+
+  if (p.m5t < p.millis()-30000) {
+  p.m5t = p.millis()
+  if (p.hp < 10) {
+  p.hp += 1
+  }
+  p.hunger -= 1;
+  p.movingSquares.push(new MovingSquare(p.random(-1000,1000), p.random(-1000,1000), 20, p.texturesmap, 'food', p));
+  }
 
   wallboxes.forEach((wall) => { 
  // console.log(p.dist(wall[0][0], wall[0][1], p.globx, p.globy))
@@ -180,7 +172,7 @@ p.draw = () => {
  
 
 
-  tickUpdate(movingSquares, dx, dy, p);
+  tickUpdate(p.movingSquares, dx, dy, p);
 
 //  for (let sq of movingSquares) {
   //  sq.display(p);
