@@ -119,7 +119,7 @@ p.draw = () => {
   p.hp += 1
   };
   p.hunger -= 1;
-  p.movingSquares.push(new MovingSquare(p.random(-1000,1000), p.random(-1000,1000), 20, p.map1s, 'food', p));
+  p.movingSquares.push(new MovingSquare(p.random(-1000,1000), p.random(-1000,1000), 20, p.texturesmap, 'food', p));
   }
 
   wallboxes.forEach((wall) => { 
