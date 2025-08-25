@@ -33,7 +33,9 @@ delete(p) {
     this.y += dy;
     this.objectsprite.position.x = this.x;
     this.objectsprite.position.y = this.y;
-    if (this.type === 'food' && p.dist(this.x,this.y,p.globx,p.globy) < 30){
+    if (this.type == 'food') {console.log(p.dist(this.x,this.y,p.globx,p.globy))
+    }
+    if (this.type == 'food' && p.dist(this.x,this.y,p.globx,p.globy) < 30){
     p.hunger += 1;
     this.delete(p)
     };
