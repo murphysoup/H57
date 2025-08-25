@@ -32,7 +32,7 @@ delete() {
     this.y += dy;
     this.objectsprite.position.x = this.x;
     this.objectsprite.position.y = this.y;
-    if (this.type = 'food' && dist(this.x,this.y,p.globx,p.globy)){
+    if (this.type = 'food' && p.dist(this.x,this.y,p.globx,p.globy)){
     p.hunger += 1
     this.delete()
     }
