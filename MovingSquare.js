@@ -17,7 +17,7 @@ export default class MovingSquare {
   }
 
 
-delete() {
+delete(p) {
     const index = p.movingSquares.indexOf(this);
     if (index !== -1) {
       p.movingSquares.splice(index, 1);
@@ -34,7 +34,7 @@ delete() {
     this.objectsprite.position.y = this.y;
     if (this.type = 'food' && p.dist(this.x,this.y,p.globx,p.globy)){
     p.hunger += 1
-    this.delete()
+    this.delete(p)
     }
   }
   
