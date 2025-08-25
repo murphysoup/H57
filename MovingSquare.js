@@ -19,9 +19,11 @@ export default class MovingSquare {
 
 delete(p) {
     const index = p.movingSquares.indexOf(this);
+    this.objectsprite = 0
     if (index !== -1) {
       p.movingSquares.splice(index, 1);
     }
+    this = []
   }
 
 
