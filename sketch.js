@@ -47,8 +47,8 @@ p.buildlevel = (lvl,sx,sy) => {
  // collisionGrid = Array.from({ length: 10 }, () =>
   //Array.from({ length: 10 }, () => [])
   //);
-  p.addbox(wallboxes,100,100,200,300)
-  console.log(wallboxes[0])
+ // p.addbox(wallboxes,100,100,200,300)
+//  console.log(wallboxes[0])
   
   p.movingSquares.push(new MovingSquare(spawnx, spawny, 4096, p.map1s, 'map', p));
  // movingSquares.push(new MovingSquare(-160-spawnx, -160-spawny, 320, p.texturesmap,p));
@@ -63,7 +63,7 @@ p.buildlevel = (lvl,sx,sy) => {
     let y = p.random(-1000-spawnx, 1000-spawny);
     let sqsize = 100;
     let tex = p.texturesmap;
-    p.movingSquares.push(new MovingSquare(x, y, sqsize, tex, 'map', p));
+    p.movingSquares.push(new MovingSquare(x+50, y+50, sqsize, tex, 'map', p));
     p.addbox(wallboxes,x,y,x+100,y+100)
   }
 }
@@ -119,7 +119,7 @@ p.draw = () => {
   p.hp += 1
   };
   p.hunger -= 1;
-  p.movingSquares.push(new MovingSquare(p.random(-1000,1000), p.random(-1000,1000), 20, p.texturesmap, 'food', p));
+  p.movingSquares.push(new MovingSquare(p.random(-1000,1000), p.random(-1000,1000), 20, p.map1s, 'food', p));
   }
 
   wallboxes.forEach((wall) => { 
