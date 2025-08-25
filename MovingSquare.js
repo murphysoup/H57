@@ -16,14 +16,30 @@ export default class MovingSquare {
     this.objectsprite.scale = sqsize / img.width;
   }
 
+
+delete() {
+    const index = p.movingSquares.indexOf(this);
+    if (index !== -1) {
+      p.movingSquares.splice(index, 1);
+    }
+  }
+
+
+  
   update(dx, dy,p) {
 
     this.x += dx;
     this.y += dy;
     this.objectsprite.position.x = this.x;
     this.objectsprite.position.y = this.y;
+    if (this.type = 'food' && dist(this.x,this.y,p.globx,p.globy)){
+    p.hunger += 1
+    this.delete()
+    }
   }
+  
 
+  
   display(p) {
     if (
       this.x + this.sqsize > 0 &&
