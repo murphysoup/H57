@@ -51,11 +51,12 @@ p.buildlevel = (lvl,sx,sy) => {
 //  console.log(wallboxes[0])
   
   p.movingSquares.push(new MovingSquare(0, 0, 8192, p.map1s, 'map', p));
- // movingSquares.push(new MovingSquare(-160-spawnx, -160-spawny, 320, p.texturesmap,p));
 
- // movingSquares.push(new MovingSquare(-1000-spawnx, -1000-spawny, 2000, p.texturesmap,p));
-  
-  p.movingSquares.push(new MovingSquare(100, 100, 100, p.texturesmap, 'wall', p));
+  p.addbox(wallboxes,-4096,4096,4106,4106)
+  p.addbox(wallboxes,4096,-4096,4106,4106)
+  p.addbox(wallboxes,-4106,-4106,4096,-4096)
+  p.addbox(wallboxes,-4106,-4106,-4096,4096)
+//  p.movingSquares.push(new MovingSquare(100, 100, 100, p.texturesmap, 'wall', p));
 
   
   for (let i = 0; i < 20; i++) {
