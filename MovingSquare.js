@@ -42,8 +42,8 @@ delete(p) {
     };
     if (this.type == 'creature'){
     if (this.sectype == 'rizzler'){
-    this.x += Math.round(2*Math.random()-1)
-    this.y += Math.round(2*Math.random()-1)
+    this.x += Math.round(10*Math.random()-5)
+    this.y += Math.round(10*Math.random()-5)
 
     }
 
