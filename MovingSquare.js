@@ -5,7 +5,7 @@ let xrizz = 40;
 
 
 export default class MovingSquare {
-  constructor(x, y, sqsize, img, objtype, p) {
+  constructor(x, y, sqsize, img, objtype, p, sectype=0) {
     this.x = x;
     this.y = y;
     this.type = objtype;
@@ -40,6 +40,17 @@ delete(p) {
     p.hunger += 1;
     this.delete(p)
     };
+    if (this.type == 'creature'){
+    if (this.sectype == 'rizzler'){
+    this.x += Math.round(2*Math.random()-1)
+    this.y += Math.round(2*Math.random()-1)
+
+    }
+
+//other creatures here
+
+      
+    }
   };
   
 
