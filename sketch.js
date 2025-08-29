@@ -50,7 +50,7 @@ p.buildlevel = (lvl,sx,sy) => {
  // p.addbox(wallboxes,100,100,200,300)
 //  console.log(wallboxes[0])
   
-  p.movingSquares.push(new MovingSquare(spawnx, spawny, 4096, p.map1s, 'map', p));
+  p.movingSquares.push(new MovingSquare(0, 0, 8192, p.map1s, 'map', p));
  // movingSquares.push(new MovingSquare(-160-spawnx, -160-spawny, 320, p.texturesmap,p));
 
  // movingSquares.push(new MovingSquare(-1000-spawnx, -1000-spawny, 2000, p.texturesmap,p));
