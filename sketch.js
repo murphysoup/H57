@@ -121,7 +121,7 @@ p.draw = () => {
   };
   p.hunger -= 1;
   p.movingSquares.push(new MovingSquare(p.random(-1000,1000), p.random(-1000,1000), 20, p.texturesmap, 'food', p));
-  if (Math.random() < 0.1) {
+  if (Math.random() < 10) {
      p.movingSquares.push(new MovingSquare(p.random(-2000,2000), p.random(-2000,2000), 20, p.texturesmap, 'creature', p, 'rizzler'));
   }
   }
