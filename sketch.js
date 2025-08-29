@@ -50,12 +50,12 @@ p.buildlevel = (lvl,sx,sy) => {
  // p.addbox(wallboxes,100,100,200,300)
 //  console.log(wallboxes[0])
   
-  p.movingSquares.push(new MovingSquare(0, 0, 8192, p.map1s, 'map', p));
+  p.movingSquares.push(new MovingSquare(0, 0, 4096, p.map1s, 'map', p));
 
-  p.addbox(wallboxes,-4096,4096,4106,4106)
-  p.addbox(wallboxes,4096,-4096,4106,4106)
-  p.addbox(wallboxes,-4106,-4106,4096,-4096)
-  p.addbox(wallboxes,-4106,-4106,-4096,4096)
+  p.addbox(wallboxes,-2048,2048,2058,2058)
+  p.addbox(wallboxes,2048,-2048,2058,2058)
+  p.addbox(wallboxes,-2058,-2058,2048,-2048)
+  p.addbox(wallboxes,-2058,-2058,-2048,2048)
 //  p.movingSquares.push(new MovingSquare(100, 100, 100, p.texturesmap, 'wall', p));
 
   
@@ -121,6 +121,9 @@ p.draw = () => {
   };
   p.hunger -= 1;
   p.movingSquares.push(new MovingSquare(p.random(-1000,1000), p.random(-1000,1000), 20, p.texturesmap, 'food', p));
+  if (Math.random() < 0.1) {
+     p.movingSquares.push(new MovingSquare(p.random(-2000,2000), p.random(-2000,2000), 20, p.texturesmap, 'creature', p, 'rizzler'));
+  }
   }
 
   wallboxes.forEach((wall) => { 
