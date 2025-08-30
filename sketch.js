@@ -114,6 +114,9 @@ p.draw = () => {
   if (p.keyIsDown(65)) dx += speed;
   if (p.keyIsDown(68)) dx -= speed;
 
+
+  if (p.keyIsDown(84) && p.keyIsDown(16)) {p.m5t = p.millis()-30000};
+
   if (p.m5t < p.millis()-30000) {
   p.m5t = p.millis()
   if (p.hp < 10) {
