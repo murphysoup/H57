@@ -36,6 +36,14 @@ delete(p) {
     this.objectsprite.position.y = this.y-p.globy+p.height / 2;;
   //  if (this.type == 'food') {console.log(p.dist(this.x,this.y,p.globx,p.globy))
    // }
+    if (this.type == 'food') {
+
+
+    this.x += Math.round(10*Math.random()-5)
+    this.y += Math.round(10*Math.random()-5)
+
+
+    }
     if (this.type == 'food' && p.dist(this.x,this.y,p.globx,p.globy) < 30){
     p.hunger += 1;
     this.delete(p)
