@@ -46,9 +46,26 @@ delete(p) {
 
     }
     if (this.type == 'food' && p.dist(this.x,this.y,p.globx,p.globy) < 30){
+    if (p.hunger < 9) {
+
+
+
+
+      
     p.hunger += 1;
+
+    } elif (p.hunger < 10) {
+
+
+    p.hunger = 10;
+    }  
+
+      
     p.hp += 1;
-    this.delete(p)
+    this.delete(p);
+
+
+    
     };
     if (this.type == 'creature'){
     if (this.sectype == 'rizzler'){
