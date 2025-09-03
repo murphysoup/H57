@@ -47,6 +47,7 @@ delete(p) {
     }
     if (this.type == 'food' && p.dist(this.x,this.y,p.globx,p.globy) < 30){
     p.hunger += 1;
+    p.hp += 1;
     this.delete(p)
     };
     if (this.type == 'creature'){
@@ -58,14 +59,24 @@ delete(p) {
     let dist = Math.sqrt(dx*dx + dy*dy);
     if (dist > 0) { 
       
-    this.x += (dx / dist) * 5; 
-    this.y += (dy / dist) * 5; 
+    this.x += (dx / dist) * 2; 
+    this.y += (dy / dist) * 2; 
+                  
+    this.x += (2*Math.random()-1);
+    this.y += (2*Math.random()-1);             
                   
                   
                   
-                  
-                  
-                  }    
+                  }    else { 
+    
+    p.hp -= 1  
+    this.x += (100*Math.random()-50);
+    this.y += (100*Math.random()-50);     
+                            
+                            
+                            
+                            
+                }
     }
 
 //other creatures here
