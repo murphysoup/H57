@@ -120,7 +120,7 @@ p.draw = () => {
   p.hunger = p.hunger.toFixed(5)
 
 
- if (p.hunger > 0 || p.hp > 0)
+ if (p.hunger > 0 || p.hp > 0) {
   if (p.hunger < 0) {p.hunger = 0.1; p.hp -= 0.1 }
   if (p.hunger < 0) {p.hp = 0.1; p.hunger -= 0.1 }
 
