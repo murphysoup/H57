@@ -54,7 +54,7 @@ delete(p) {
       
     p.hunger += 1;
 
-    } elif (p.hunger < 10) {
+    } else if (p.hunger < 10) {
 
 
     p.hunger = 10;
