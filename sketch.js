@@ -117,7 +117,7 @@ p.draw = () => {
 
 
 
-  p.hunger = p.hunger.toFixed(5)
+  p.hunger = Number(p.hunger.toFixed(5))
 
 
  if (p.hunger > 0 || p.hp > 0) {
