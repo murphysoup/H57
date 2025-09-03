@@ -51,9 +51,21 @@ delete(p) {
     };
     if (this.type == 'creature'){
     if (this.sectype == 'rizzler'){
-    this.x += Math.round(10*Math.random()-5)
-    this.y += Math.round(10*Math.random()-5)
-    console.log('je mappele')
+
+
+    let dx = p.globx - this.x;
+    let dy = p.globy - this.y;
+    let dist = Math.sqrt(dx*dx + dy*dy);
+    if (dist > 0) { 
+      
+    this.x += (dx / dist) * 5; 
+    this.y += (dy / dist) * 5; 
+                  
+                  
+                  
+                  
+                  
+                  }    
     }
 
 //other creatures here
