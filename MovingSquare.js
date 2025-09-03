@@ -57,13 +57,13 @@ delete(p) {
     let dx = p.globx - this.x;
     let dy = p.globy - this.y;
     let dist = Math.sqrt(dx*dx + dy*dy);
-    if (dist > 0) { 
+    if (dist > 6) { 
       
-    this.x += (dx / dist) * 2; 
-    this.y += (dy / dist) * 2; 
+    this.x += (dx / dist) * 3; 
+    this.y += (dy / dist) * 3; 
                   
-    this.x += (2*Math.random()-1);
-    this.y += (2*Math.random()-1);             
+    this.x += (6*Math.random()-3);
+    this.y += (6*Math.random()-3);             
                   
                   
                   
