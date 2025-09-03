@@ -59,8 +59,8 @@ delete(p) {
     let dist = Math.sqrt(dx*dx + dy*dy);
     if (dist > 6) { 
       
-    this.x += (dx / dist) * 3; 
-    this.y += (dy / dist) * 3; 
+    this.x += (dx / dist) * 2.5; 
+    this.y += (dy / dist) * 2.5; 
                   
     this.x += (6*Math.random()-3);
     this.y += (6*Math.random()-3);             
@@ -70,8 +70,8 @@ delete(p) {
                   }    else { 
     
     p.hp -= 1  
-    this.x += (100*Math.random()-50);
-    this.y += (100*Math.random()-50);     
+    this.x += (200*Math.random()-100);
+    this.y += (200*Math.random()-100);     
                             
                             
                             
