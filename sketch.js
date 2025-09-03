@@ -105,7 +105,7 @@ p.setup = () => {
 p.draw = () => {
   p.background(240);
   let speed = 2;
-  if (p.keyIsDown(16)) speed = 10;
+  if (p.keyIsDown(16)) {speed = 10; p.hunger -= 0.02}
   let dx2 = 0;
   let dy2 = 0;
   let dx = 0;
@@ -123,7 +123,7 @@ p.draw = () => {
   if (p.hp < 10) {
   p.hp += 1
   };
-  p.hunger -= 1;
+  p.hunger -= 0.5;
   p.movingSquares.push(new MovingSquare(p.random(-1000,1000), p.random(-1000,1000), 20, p.texturesmap, 'food', p));
   if (Math.random() < 10) {
      p.movingSquares.push(new MovingSquare(p.random(-2000,2000), p.random(-2000,2000), 60, p.trizzler, 'creature', p, 'rizzler'));
