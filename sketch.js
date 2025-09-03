@@ -105,7 +105,7 @@ p.setup = () => {
 p.draw = () => {
   p.background(240);
   let speed = 2;
-  if (p.keyIsDown(16)) {speed = 10; p.hunger -= 0.02}
+  if (p.keyIsDown(16)) {speed = 10; p.hunger -= 0.01}
   let dx2 = 0;
   let dy2 = 0;
   let dx = 0;
@@ -115,14 +115,14 @@ p.draw = () => {
   if (p.keyIsDown(65)) dx += speed;
   if (p.keyIsDown(68)) dx -= speed;
 
-
+  if (p.hunger < 0) {p.hunger = 0.1; p.hp -= 0.1 }
   if (p.keyIsDown(84) && p.keyIsDown(16)) {p.m5t = p.millis()-30000};
 
   if (p.m5t < p.millis()-30000) {
   p.m5t = p.millis()
-  if (p.hp < 10) {
+  if (p.hp < 9) {
   p.hp += 1
-  };
+  } else if (p.hp < 10) {p.hp = 10};
   p.hunger -= 0.5;
   p.movingSquares.push(new MovingSquare(p.random(-1000,1000), p.random(-1000,1000), 20, p.texturesmap, 'food', p));
   if (Math.random() < 10) {
