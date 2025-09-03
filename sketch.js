@@ -26,7 +26,7 @@ p.preload = () => {
   p.tree1 = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1756021194/nivtree1_jrfdun.png')
   p.map1s = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.png')
   p.texturesmap = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/download_33_1_usl3ii.jpg');
-  p.t.rizzler = p.loadImage'(https://res.cloudinary.com/dkjgmeufk/image/upload/v1756879191/raw_kcoxql.webp');
+  p.trizzler = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1756879191/raw_kcoxql.webp');
 };
 
 p.addbox = (g,x1,y1,x2,y2) => {
