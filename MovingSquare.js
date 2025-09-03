@@ -61,7 +61,6 @@ delete(p) {
     }  
 
       
-    p.hp += 1;
     this.delete(p);
 
 
