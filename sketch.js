@@ -115,7 +115,13 @@ p.draw = () => {
   if (p.keyIsDown(65)) dx += speed;
   if (p.keyIsDown(68)) dx -= speed;
 
+
+
+ if (p.hunger > 0 || p.hp > 0)
   if (p.hunger < 0) {p.hunger = 0.1; p.hp -= 0.1 }
+  if (p.hunger < 0) {p.hp = 0.1; p.hunger -= 0.1 }
+
+};
   if (p.keyIsDown(84) && p.keyIsDown(16)) {p.m5t = p.millis()-30000};
 
   if (p.m5t < p.millis()-30000) {
