@@ -100,7 +100,7 @@ p.buildlevel = (lvl,sx,sy) => {
 //    p.addbox(wallboxes,x,y,x+100,y+100)
 //  }
 
-  p.buildthing(wallboxes, p.movingSquares, 'tree', 300, [150, 150, 80, 100], p.tree1,[[400,-600],[607,1503],[138,999],[2030,-130],[-623,900],[-500,-1039],[-1000,1000],[1000,-1000],[1048,-1948],[-442,1390]]);
+  p.buildthing(wallboxes, p.movingSquares, 'tree', 300, [150, 150, 60, 120], p.tree1,[[400,-600],[607,1503],[138,999],[2030,-130],[-623,900],[-500,-1039],[-1000,1000],[1000,-1000],[1048,-1948],[-442,1390]]);
 
   
   }
@@ -229,6 +229,18 @@ p.draw = () => {
 //  for (let sq of movingSquares) {
   //  sq.display(p);
  // };
+
+
+
+ 
+
+ 
+  p.fill(255, 50, 50);
+  p.noStroke();
+  p.rectMode(p.CENTER);
+  p.rect(p.player.x, p.player.y, p.player.sqsize, p.player.sqsize);
+
+ 
   p.drawSprites();
   let g = p.text("coords: " + p.globx + "," + p.globy, 50, 200);
   g.textSize(20)
@@ -238,12 +250,6 @@ p.draw = () => {
   hunger.textSize(20)
 
 
-
- 
-  p.fill(255, 50, 50);
-  p.noStroke();
-  p.rectMode(p.CENTER);
-  p.rect(p.player.x, p.player.y, p.player.sqsize, p.player.sqsize);
 } 
 
 };
