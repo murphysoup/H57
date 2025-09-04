@@ -113,6 +113,8 @@ if (p.inventoryopen) {p.inventoryopen = false} else {p.inventoryopen = true}
 
  
 p.setup = () => {
+  p.topsprites = new Group();
+  p.backsprites = new Group();
   p.movingSquares = [];
   p.createCanvas(p.windowWidth, p.windowHeight);
   p.m5t = 0
@@ -235,13 +237,7 @@ p.draw = () => {
  
 
  
-  p.fill(255, 50, 50);
-  p.noStroke();
-  p.rectMode(p.CENTER);
-  p.rect(p.player.x, p.player.y, p.player.sqsize, p.player.sqsize);
-
- 
-  p.drawSprites();
+  p.drawSprites(p.backsprites);
   let g = p.text("coords: " + p.globx + "," + p.globy, 50, 200);
   g.textSize(20)
   let hp = p.text("HP: " + p.hp, 50, 50);
@@ -250,6 +246,19 @@ p.draw = () => {
   hunger.textSize(20)
 
 
+
+
+ 
+ 
+  p.fill(255, 50, 50);
+  p.noStroke();
+  p.rectMode(p.CENTER);
+  p.rect(p.player.x, p.player.y, p.player.sqsize, p.player.sqsize);
+
+  p.drawSprites(p.topsprites);
+
+
+ 
 } 
 
 };
