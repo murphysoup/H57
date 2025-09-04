@@ -94,9 +94,12 @@ p.buildlevel = (lvl,sx,sy) => {
 //    p.movingSquares.push(new MovingSquare(x+50, y+50, sqsize, tex, 'map', p));
 //    p.addbox(wallboxes,x,y,x+100,y+100)
 //  }
-//}
-//}
-p.buildthing(wallboxes, p.movingSquares, 'tree', 50, 50, p.tree1,[[200,300],[607,103],[138,999],[2030,-130],[-123,900],[-500,-1039],[-1000,1000],[1000,-1000],[1048,-1948],[-442,39]])
+
+  p.buildthing(wallboxes, p.movingSquares, 'tree', 50, 50, p.tree1,[[200,300],[607,103],[138,999],[2030,-130],[-123,900],[-500,-1039],[-1000,1000],[1000,-1000],[1048,-1948],[-442,39]]);
+
+  
+  }
+}
 
  
 p.OpenInventory = () => {
