@@ -22,6 +22,7 @@ let inventorybutton;
 let wallboxes = []
 
 
+
 p.preload = () => {
   p.tree1 = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1756021194/nivtree1_jrfdun.png')
   p.map1s = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.png')
@@ -29,6 +30,31 @@ p.preload = () => {
   p.trizzler = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1756879191/raw_kcoxql.webp');
 };
 
+p.buildthing = (wallsahh, obahh, otype, size, hitx, hity, textures, coords) => {
+
+coords.forEach((value) => {
+
+
+obahh.push(new MovingSquare(value[0], value[1], size, textures, 'otype', p));
+
+p.addbox(wallsahh,value[0]-hitx,value[1]-hity,value[0]+hitx,value[1]+hity)
+
+
+
+ 
+});
+
+
+
+
+
+
+
+
+
+
+}
+ 
 p.addbox = (g,x1,y1,x2,y2) => {
  g.push([[x1,y1],[x2,y2],Math.sqrt(((x1-x2)**2)+((y1-y2)**2))+100])
  
@@ -60,16 +86,17 @@ p.buildlevel = (lvl,sx,sy) => {
 //  p.movingSquares.push(new MovingSquare(100, 100, 100, p.texturesmap, 'wall', p));
 
   
-  for (let i = 0; i < 20; i++) {
-    let x = p.random(-1000-spawnx, 1000-spawny);
-    let y = p.random(-1000-spawnx, 1000-spawny);
-    let sqsize = 100;
-    let tex = p.texturesmap;
-    p.movingSquares.push(new MovingSquare(x+50, y+50, sqsize, tex, 'map', p));
-    p.addbox(wallboxes,x,y,x+100,y+100)
-  }
-}
-}
+///  for (let i = 0; i < 20; i++) {
+//    let x = p.random(-1000-spawnx, 1000-spawny);
+//    let y = p.random(-1000-spawnx, 1000-spawny);
+//    let sqsize = 100;
+//    let tex = p.texturesmap;
+//    p.movingSquares.push(new MovingSquare(x+50, y+50, sqsize, tex, 'map', p));
+//    p.addbox(wallboxes,x,y,x+100,y+100)
+//  }
+//}
+//}
+p.buildthing(wallboxes, p.movingSquares, 'tree', 50, 50, p.tree1,[[200,300],[607,103],[138,999],[2030,-130],[-123,900],[-500,-1039],[-1000,1000],[1000,-1000],[1048,-1948],[-442,39]])
 
  
 p.OpenInventory = () => {
