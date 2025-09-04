@@ -32,14 +32,17 @@ p.preload = () => {
 
 
 
-p.buildthing = (wallsahh, obahh, otype, size, hitx, hity, textures, coords) => {
-
+p.buildthing = (wallsahh, obahh, otype, size, hitboxd, textures, coords) => {
+let hitx = hitboxd[0]
+let hity = hitboxd[1]
+let xoff = hitboxd[2]
+let yoff = hitboxd[3]
 coords.forEach((value) => {
 
 
 obahh.push(new MovingSquare(value[0], value[1], size, textures, 'otype', p));
 
-p.addbox(wallsahh,value[0]-hitx,value[1]-hity,value[0]+hitx,value[1]+hity)
+p.addbox(wallsahh,value[0]-hitx+xoff,value[1]-hity+yoff,value[0]+hitx+xoff,value[1]+hity+yoff)
 
 
 
@@ -97,7 +100,7 @@ p.buildlevel = (lvl,sx,sy) => {
 //    p.addbox(wallboxes,x,y,x+100,y+100)
 //  }
 
-  p.buildthing(wallboxes, p.movingSquares, 'tree', 200, 100, 250, p.tree1,[[200,300],[607,103],[138,999],[2030,-130],[-123,900],[-500,-1039],[-1000,1000],[1000,-1000],[1048,-1948],[-442,39]]);
+  p.buildthing(wallboxes, p.movingSquares, 'tree', 200, [100, 250, 50, 0], p.tree1,[[200,300],[607,103],[138,999],[2030,-130],[-123,900],[-500,-1039],[-1000,1000],[1000,-1000],[1048,-1948],[-442,39]]);
 
   
   }
