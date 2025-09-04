@@ -113,8 +113,8 @@ if (p.inventoryopen) {p.inventoryopen = false} else {p.inventoryopen = true}
 
  
 p.setup = () => {
-  p.topsprites = new Group();
-  p.backsprites = new Group();
+  p.topsprites = new p.Group();
+  p.backsprites = new p.Group();
   p.movingSquares = [];
   p.createCanvas(p.windowWidth, p.windowHeight);
   p.m5t = 0
