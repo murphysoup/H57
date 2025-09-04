@@ -15,7 +15,7 @@ export default class MovingSquare {
     this.objectsprite = p.createSprite(x, y, sqsize, sqsize);
     this.objectsprite.addImage(img);
     this.objectsprite.scale = sqsize / img.width;
-    if (obtype='tree'){
+    if (objtype='tree'){
      p.topsprites.add(this);
     } else {p.backsprites.add(this);}
   }
