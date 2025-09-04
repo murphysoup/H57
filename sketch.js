@@ -30,6 +30,8 @@ p.preload = () => {
   p.trizzler = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1756879191/raw_kcoxql.webp');
 };
 
+
+
 p.buildthing = (wallsahh, obahh, otype, size, hitx, hity, textures, coords) => {
 
 coords.forEach((value) => {
@@ -95,7 +97,7 @@ p.buildlevel = (lvl,sx,sy) => {
 //    p.addbox(wallboxes,x,y,x+100,y+100)
 //  }
 
-  p.buildthing(wallboxes, p.movingSquares, 'tree', 50, 50, p.tree1,[[200,300],[607,103],[138,999],[2030,-130],[-123,900],[-500,-1039],[-1000,1000],[1000,-1000],[1048,-1948],[-442,39]]);
+  p.buildthing(wallboxes, p.movingSquares, 'tree', 200, 100, 250, p.tree1,[[200,300],[607,103],[138,999],[2030,-130],[-123,900],[-500,-1039],[-1000,1000],[1000,-1000],[1048,-1948],[-442,39]]);
 
   
   }
