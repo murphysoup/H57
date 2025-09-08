@@ -129,7 +129,7 @@ delete(p) {
 
 
 
-neighbors(node, nodes) {
+neighborsf(node, nodes) {
   // Return the 3 closest nodes to the given node
   return nodes
     .filter(n => n !== node) // exclude itself
@@ -144,7 +144,7 @@ neighbors(node, nodes) {
 
   
 
-aStar(start, goal, nodesa=0, neighborsFunc=neighbors) {
+aStar(start, goal, nodesa=0, neighborsFunc=neighborsf) {
   // nodes: array of {x, y, id}
   // neighborsFunc: function(node) => returns array of neighboring nodes
   
