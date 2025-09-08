@@ -79,9 +79,12 @@ delete(p) {
     let dist = Math.sqrt(dx*dx + dy*dy);
     if (dist > 6) { 
       
-    this.x += (dx / dist) * 2.5; 
-    this.y += (dy / dist) * 2.5; 
-                  
+   // this.x += (dx / dist) * 2.5; 
+  //  this.y += (dy / dist) * 2.5; 
+
+
+    tpath = aStar(this.x,this.y)
+      
     this.x += (6*Math.random()-3);
     this.y += (6*Math.random()-3);             
                   
@@ -126,12 +129,19 @@ neighbors(node, nodes) {
 aStar(start, goal, nodesa=0, neighborsFunc=neighbors) {
   // nodes: array of {x, y, id}
   // neighborsFunc: function(node) => returns array of neighboring nodes
- nodes = []
-  p.wallboxes.forEach((wall) => { 
- // console.log(p.dist(wall[0][0], wall[0][1], p.globx, p.globy))
-    d1 = p.dist(start[0],start[1],goal[0],goal[1])
+  
+ nodes = [start,goal]
+
+
+  
+for (let i = 0; i < 20; i++) {
+d1 = p.dist(start[0],start[1],goal[0],goal[1])
     rx = Math.random() * (start[0]+d1 - start[0]-d1) + start[0]-d1
     ry = Math.random() * (start[1]+d1 - start[1]-d1) + start[1]-d1
+  
+  p.wallboxes.forEach((wall) => { 
+ // console.log(p.dist(wall[0][0], wall[0][1], p.globx, p.globy))
+    
     
     if (p.dist(wall[0][0], wall[0][1], rx, ry) < wall[2]) { 
   
@@ -144,7 +154,7 @@ aStar(start, goal, nodesa=0, neighborsFunc=neighbors) {
    }
 
 
-  }
+  }}};
 
   
   function heuristic(a, b) {
