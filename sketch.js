@@ -40,7 +40,7 @@ let yoff = hitboxd[3]
 coords.forEach((value) => {
 
 
-obahh.push(new MovingSquare(value[0], value[1], size, textures, 'otype', p));
+obahh.push(new MovingSquare(value[0], value[1], size, textures, otype, p));
 
 p.addbox(wallsahh,value[0]-hitx+xoff,value[1]-hity+yoff,value[0]+hitx+xoff,value[1]+hity+yoff)
 
@@ -100,7 +100,7 @@ p.buildlevel = (lvl,sx,sy) => {
 //    p.addbox(wallboxes,x,y,x+100,y+100)
 //  }
 
-  p.buildthing(wallboxes, p.movingSquares, 'tree', 300, [150, 150, 60, 120], p.tree1,[[400,-600],[607,1503],[138,999],[2030,-130],[-623,900],[-500,-1039],[-1000,1000],[1000,-1000],[1048,-1948],[-442,1390]]);
+  p.buildthing(wallboxes, p.movingSquares, 'tree', 300, [150, 150, 40, 150], p.tree1,[[400,-600],[607,1503],[138,999],[2030,-130],[-623,900],[-500,-1039],[-1000,1000],[1000,-1000],[1048,-1948],[-442,1390]]);
 
   
   }
