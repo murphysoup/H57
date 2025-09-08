@@ -74,16 +74,25 @@ delete(p) {
     if (this.sectype == 'rizzler'){
 
 
-    let dx = p.globx - this.x;
-    let dy = p.globy - this.y;
+    
+      
+
+
+    if (typeof tpath === "undefined" || tpath === []) {
+    tpath = aStar([this.x,this.y],[p.globx,p.globy])
+
+    }
+
+
+    let dx = tpath[0][0] - this.x;
+    let dy = tpath[0][1] - this.y;
     let dist = Math.sqrt(dx*dx + dy*dy);
     if (dist > 6) { 
+
       
-   // this.x += (dx / dist) * 2.5; 
-  //  this.y += (dy / dist) * 2.5; 
+    this.x += (dx / dist) * 2.5; 
+    this.y += (dy / dist) * 2.5; 
 
-
-    tpath = aStar(this.x,this.y)
       
     this.x += (6*Math.random()-3);
     this.y += (6*Math.random()-3);             
@@ -91,15 +100,24 @@ delete(p) {
                   
                   
                   }    else { 
-    
-    p.hp -= 1  
-    this.x += (200*Math.random()-100);
-    this.y += (200*Math.random()-100);     
+    tpath.shift()
+      
                             
                             
                             
                             
                 }
+    
+
+
+      
+    let dx2 = p.globx - this.x;
+    let dy2 = p.globy - this.y;
+    let dist2 = Math.sqrt(dx2*dx2 + dy2*dy2);
+    if (dist2 > 6) { 
+         p.hp -= 1  
+    this.x += (200*Math.random()-100);
+    this.y += (200*Math.random()-100);  
     }
 
 //other creatures here
