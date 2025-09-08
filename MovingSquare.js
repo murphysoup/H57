@@ -106,6 +106,102 @@ delete(p) {
   };
   
 
+
+
+neighbors(node, nodes) {
+  // Return the 3 closest nodes to the given node
+  return nodes
+    .filter(n => n !== node) // exclude itself
+    .sort((a, b) => {
+      const distA = Math.sqrt((a.x - node.x) ** 2 + (a.y - node.y) ** 2);
+      const distB = Math.sqrt((b.x - node.x) ** 2 + (b.y - node.y) ** 2);
+      return distA - distB;
+    })
+    .slice(0, 3); // take only the 3 closest
+}
+
+
+  
+
+aStar(start, goal, nodesa=0, neighborsFunc=neighbors) {
+  // nodes: array of {x, y, id}
+  // neighborsFunc: function(node) => returns array of neighboring nodes
+ nodes = []
+  p.wallboxes.forEach((wall) => { 
+ // console.log(p.dist(wall[0][0], wall[0][1], p.globx, p.globy))
+    d1 = p.dist(start[0],start[1],goal[0],goal[1])
+    rx = Math.random() * (start[0]+d1 - start[0]-d1) + start[0]-d1
+    ry = Math.random() * (start[1]+d1 - start[1]-d1) + start[1]-d1
+    
+    if (p.dist(wall[0][0], wall[0][1], rx, ry) < wall[2]) { 
+  
+   if (!(rx < wall[1][0] &&
+            rx > wall[0][0] &&
+            ry < wall[1][1] &&
+            ry > wall[0][1])) {
+     nodes.push([rx,ry])
+     
+   }
+
+
+  }
+
+  
+  function heuristic(a, b) {
+    // Euclidean distance
+    return Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
+  }
+
+  let openSet = [start];
+  let cameFrom = new Map();
+
+  let gScore = new Map();
+  nodes.forEach(node => gScore.set(node, Infinity));
+  gScore.set(start, 0);
+
+  let fScore = new Map();
+  nodes.forEach(node => fScore.set(node, Infinity));
+  fScore.set(start, heuristic(start, goal));
+
+  while (openSet.length > 0) {
+    // Get node in openSet with lowest fScore
+    openSet.sort((a, b) => fScore.get(a) - fScore.get(b));
+    let current = openSet.shift();
+
+    if (current === goal) {
+      // Reconstruct path
+      let path = [current];
+      while (cameFrom.has(current)) {
+        current = cameFrom.get(current);
+        path.unshift(current);
+      }
+      return path;
+    }
+
+    for (let neighbor of neighbors(current)) {
+      let tentativeG = gScore.get(current) + heuristic(current, neighbor);
+      if (tentativeG < gScore.get(neighbor)) {
+        cameFrom.set(neighbor, current);
+        gScore.set(neighbor, tentativeG);
+        fScore.set(neighbor, tentativeG + heuristic(neighbor, goal));
+        if (!openSet.includes(neighbor)) {
+          openSet.push(neighbor);
+        }
+      }
+    }
+  }
+
+  // No path found
+  return [];
+}
+
+
+  
+
+  
+
+
+  
   
   display(p) {
     if (
