@@ -52,7 +52,7 @@ neighborsf(node, nodes) {
   // nodes: array of {x, y, id}
   // neighborsFunc: function(node) => returns array of neighboring nodes
   
- nodes = [start,goal]
+ let nodes = [start,goal]
 
 
   
