@@ -48,7 +48,7 @@ neighborsf(node, nodes) {
 
   
 
- aStar(start, goal, nodesa=0, neighborsFunc=neighborsf) {
+ aStar(start, goal, nodesa=0, neighborsFunc=this.neighborsf) {
   // nodes: array of {x, y, id}
   // neighborsFunc: function(node) => returns array of neighboring nodes
   
@@ -110,7 +110,7 @@ d1 = p.dist(start[0],start[1],goal[0],goal[1])
       return path;
     }
 
-    for (let neighbor of this.neighbors(current)) {
+    for (let neighbor of this.neighborsf(current)) {
       let tentativeG = gScore.get(current) + heuristic(current, neighbor);
       if (tentativeG < gScore.get(neighbor)) {
         cameFrom.set(neighbor, current);
