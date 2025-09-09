@@ -48,7 +48,7 @@ neighborsf(node, nodes) {
 
   
 
- aStar(start, goal, nodesa=0, neighborsFunc=this.neighborsf) {
+ aStar(start, goal, nodesa=0, neighborsFunc=this.neighborsf,p) {
   // nodes: array of {x, y, id}
   // neighborsFunc: function(node) => returns array of neighboring nodes
   
@@ -175,7 +175,7 @@ d1 = p.dist(start[0],start[1],goal[0],goal[1]);
 
 
     if (typeof tpath === "undefined" || tpath === []) {
-    tpath = this.aStar([this.x,this.y],[p.globx,p.globy])
+    tpath = this.aStar([this.x,this.y],[p.globx,p.globy],p)
 
     }
 
