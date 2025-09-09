@@ -33,7 +33,7 @@ delete(p) {
 
   
 
-neighborsf(node, nodes) {
+neighborsf(node, nodes, p) {
   // Return the 3 closest nodes to the given node
   return nodes
     .filter(n => n !== node) // exclude itself
@@ -48,7 +48,7 @@ neighborsf(node, nodes) {
 
   
 
- aStar(start, goal, nodesa=0, neighborsFunc=neighborsf) {
+ aStar(start, goal, nodesa=0, neighborsFunc=neighborsf, p) {
   // nodes: array of {x, y, id}
   // neighborsFunc: function(node) => returns array of neighboring nodes
   
@@ -175,7 +175,7 @@ d1 = p.dist(start[0],start[1],goal[0],goal[1])
 
 
     if (typeof tpath === "undefined" || tpath === []) {
-    tpath = aStar([this.x,this.y],[p.globx,p.globy])
+    tpath = aStar([this.x,this.y],[p.globx,p.globy],p)
 
     }
 
