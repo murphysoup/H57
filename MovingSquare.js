@@ -52,14 +52,14 @@ neighborsf(node, nodes) {
   // nodes: array of {x, y, id}
   // neighborsFunc: function(node) => returns array of neighboring nodes
   
- let nodes = [start,goal]
+ let nodes = [start,goal];
 
 
   
 for (let i = 0; i < 20; i++) {
-d1 = p.dist(start[0],start[1],goal[0],goal[1])
-    rx = Math.random() * (start[0]+d1 - start[0]-d1) + start[0]-d1
-    ry = Math.random() * (start[1]+d1 - start[1]-d1) + start[1]-d1
+d1 = p.dist(start[0],start[1],goal[0],goal[1]);
+    rx = Math.random() * (start[0]+d1 - start[0]-d1) + start[0]-d1;
+    ry = Math.random() * (start[1]+d1 - start[1]-d1) + start[1]-d1;
   
   p.wallboxes.forEach((wall) => { 
  // console.log(p.dist(wall[0][0], wall[0][1], p.globx, p.globy))
