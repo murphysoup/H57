@@ -57,7 +57,7 @@ neighborsf(node, nodes) {
 
   
 for (let i = 0; i < 20; i++) {
-d1 = p.dist(start[0],start[1],goal[0],goal[1]);
+d1 = Math.sqrt((start[0]-goal[0]) ** 2+(start[1]-goal[1]) ** 2);
     rx = Math.random() * (start[0]+d1 - start[0]-d1) + start[0]-d1;
     ry = Math.random() * (start[1]+d1 - start[1]-d1) + start[1]-d1;
   
