@@ -244,4 +244,7 @@ d1 = p.dist(start[0],start[1],goal[0],goal[1])
       p.image(this.img, this.x, this.y, this.sqsize, this.sqsize);
     }
   }
+
+
+  
 }
