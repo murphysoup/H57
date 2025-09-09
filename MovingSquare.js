@@ -33,7 +33,7 @@ delete(p) {
 
   
 
-neighborsf(node, nodes, p) {
+neighborsf(node, nodes) {
   // Return the 3 closest nodes to the given node
   return nodes
     .filter(n => n !== node) // exclude itself
@@ -48,7 +48,7 @@ neighborsf(node, nodes, p) {
 
   
 
- aStar(start, goal, nodesa=0, neighborsFunc=neighborsf, p) {
+ aStar(start, goal, nodesa=0, neighborsFunc=neighborsf) {
   // nodes: array of {x, y, id}
   // neighborsFunc: function(node) => returns array of neighboring nodes
   
@@ -110,7 +110,7 @@ d1 = p.dist(start[0],start[1],goal[0],goal[1])
       return path;
     }
 
-    for (let neighbor of neighbors(current)) {
+    for (let neighbor of this.neighbors(current)) {
       let tentativeG = gScore.get(current) + heuristic(current, neighbor);
       if (tentativeG < gScore.get(neighbor)) {
         cameFrom.set(neighbor, current);
@@ -175,7 +175,7 @@ d1 = p.dist(start[0],start[1],goal[0],goal[1])
 
 
     if (typeof tpath === "undefined" || tpath === []) {
-    tpath = aStar([this.x,this.y],[p.globx,p.globy],p)
+    tpath = this.aStar([this.x,this.y],[p.globx,p.globy])
 
     }
 
