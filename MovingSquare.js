@@ -172,7 +172,7 @@ d1 = p.dist(start[0],start[1],goal[0],goal[1])
    }
 
 
-  }}};
+  }})};
 
   
   function heuristic(a, b) {
