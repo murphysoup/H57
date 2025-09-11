@@ -78,7 +78,6 @@ for (let i = 0; i < 20; i++) {
 
   }})};
 
-  console.log(nodes)
 
   
   function heuristic(a, b) {
@@ -176,13 +175,13 @@ for (let i = 0; i < 20; i++) {
       
 
 
-    if (typeof tpath === "undefined" || tpath === []) {
+    if (typeof this.tpath === "undefined" || this.tpath === []) {
     this.tpath = this.aStar([this.x,this.y],[p.globx,p.globy],p)
 
     }
 
-
-    let dx = this.tpath[0][0] - this.x;
+    console.log(this.tpath)
+      
     let dy = this.tpath[0][1] - this.y;
     let dist = Math.sqrt(dx*dx + dy*dy);
     if (dist > 6) { 
