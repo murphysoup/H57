@@ -19,7 +19,7 @@ const sketch = (p) => {
 let player;
 let walls = [];
 let inventorybutton;
-let wallboxes = []
+let p.wallboxes = []
 
 
 
@@ -67,7 +67,7 @@ p.addbox = (g,x1,y1,x2,y2) => {
 
 p.buildlevel = (lvl,sx,sy) => {
   p.movingSquares = [];
-  wallboxes = [];
+  p.wallboxes = [];
   let spawnx = sx+p.width / 2;
   let spawny = sy+p.height / 2;
   p.inventoryopen = false
@@ -79,15 +79,15 @@ p.buildlevel = (lvl,sx,sy) => {
  // collisionGrid = Array.from({ length: 10 }, () =>
   //Array.from({ length: 10 }, () => [])
   //);
- // p.addbox(wallboxes,100,100,200,300)
-//  console.log(wallboxes[0])
+ // p.addbox(p.wallboxes,100,100,200,300)
+//  console.log(p.wallboxes[0])
   
   p.movingSquares.push(new MovingSquare(0, 0, 4096, p.map1s, 'map', p));
 
-  p.addbox(wallboxes,-2048,2048,2058,2058)
-  p.addbox(wallboxes,2048,-2048,2058,2058)
-  p.addbox(wallboxes,-2058,-2058,2048,-2048)
-  p.addbox(wallboxes,-2058,-2058,-2048,2048)
+  p.addbox(p.wallboxes,-2048,2048,2058,2058)
+  p.addbox(p.wallboxes,2048,-2048,2058,2058)
+  p.addbox(p.wallboxes,-2058,-2058,2048,-2048)
+  p.addbox(p.wallboxes,-2058,-2058,-2048,2048)
 //  p.movingSquares.push(new MovingSquare(100, 100, 100, p.texturesmap, 'wall', p));
 
   
@@ -97,10 +97,10 @@ p.buildlevel = (lvl,sx,sy) => {
 //    let sqsize = 100;
 //    let tex = p.texturesmap;
 //    p.movingSquares.push(new MovingSquare(x+50, y+50, sqsize, tex, 'map', p));
-//    p.addbox(wallboxes,x,y,x+100,y+100)
+//    p.addbox(p.wallboxes,x,y,x+100,y+100)
 //  }
 
-  p.buildthing(wallboxes, p.movingSquares, 'tree', 300, [150, 150, 40, 150], p.tree1,[[400,-600],[607,1503],[138,999],[2030,-130],[-623,900],[-500,-1039],[-1000,1000],[1000,-1000],[1048,-1948],[-442,1390]]);
+  p.buildthing(p.wallboxes, p.movingSquares, 'tree', 300, [150, 150, 40, 150], p.tree1,[[400,-600],[607,1503],[138,999],[2030,-130],[-623,900],[-500,-1039],[-1000,1000],[1000,-1000],[1048,-1948],[-442,1390]]);
 
   
   }
@@ -176,7 +176,7 @@ p.draw = () => {
   }
   }
 
-  wallboxes.forEach((wall) => { 
+  p.wallboxes.forEach((wall) => { 
  // console.log(p.dist(wall[0][0], wall[0][1], p.globx, p.globy))
   if (p.dist(wall[0][0], wall[0][1], p.globx, p.globy) < wall[2]) { 
  //  console.log('soup1')
@@ -225,7 +225,7 @@ p.draw = () => {
 
  
 
-
+  console.log(p.wallboxes)
   tickUpdate(p.movingSquares, dx, dy, p);
 
 //  for (let sq of movingSquares) {
