@@ -112,7 +112,7 @@ for (let i = 0; i < 20; i++) {
       return path;
     }
 
-    for (let neighbor of this.neighborsf(current)) {
+    for (let neighbor of this.neighborsf(current, nodes)) {
       let tentativeG = gScore.get(current) + heuristic(current, neighbor);
       if (tentativeG < gScore.get(neighbor)) {
         cameFrom.set(neighbor, current);
