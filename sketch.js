@@ -225,7 +225,7 @@ p.draw = () => {
 
  
 
-  console.log(p.wallboxes)
+ // console.log(p.wallboxes)
   tickUpdate(p.movingSquares, dx, dy, p);
 
 //  for (let sq of movingSquares) {
