@@ -48,7 +48,7 @@ neighborsf(node, nodes) {
 
   
 
- aStar(start, goal, nodesa=0, neighborsFunc=this.neighborsf,p) {
+ aStar(start, goal, p, nodesa=0, neighborsFunc=this.neighborsf) {
   // nodes: array of {x, y, id}
   // neighborsFunc: function(node) => returns array of neighboring nodes
   
