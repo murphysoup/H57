@@ -19,7 +19,7 @@ const sketch = (p) => {
 let player;
 let walls = [];
 let inventorybutton;
-let p.wallboxes = []
+let p.wallboxes = [];
 
 
 
