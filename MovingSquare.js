@@ -177,13 +177,13 @@ for (let i = 0; i < 20; i++) {
 
 
     if (typeof tpath === "undefined" || tpath === []) {
-    tpath = this.aStar([this.x,this.y],[p.globx,p.globy],p)
+    this.tpath = this.aStar([this.x,this.y],[p.globx,p.globy],p)
 
     }
 
 
-    let dx = tpath[0][0] - this.x;
-    let dy = tpath[0][1] - this.y;
+    let dx = this.tpath[0][0] - this.x;
+    let dy = this.tpath[0][1] - this.y;
     let dist = Math.sqrt(dx*dx + dy*dy);
     if (dist > 6) { 
 
@@ -198,7 +198,7 @@ for (let i = 0; i < 20; i++) {
                   
                   
                   }    else { 
-    tpath.shift()
+    this.tpath.shift()
       
                             
                             
