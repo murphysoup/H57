@@ -101,12 +101,19 @@ for (let i = 0; i < 20; i++) {
     openSet.sort((a, b) => fScore.get(a) - fScore.get(b));
     let current = openSet.shift();
 
+    
     if (current === goal) {
       // Reconstruct path
       let path = [current];
       while (cameFrom.has(current)) {
         current = cameFrom.get(current);
         path.unshift(current);
+
+                console.log(cameFrom)
+
+        console.log(current)
+        console.log(path)
+
       }
       return path;
     }
