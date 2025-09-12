@@ -52,9 +52,11 @@ neighborsf(node, nodes) {
   // nodes: array of {x, y, id}
   // neighborsFunc: function(node) => returns array of neighboring nodes
   
-// let nodes = [start,goal];
- let nodes = [{ x: start[0], y: start[1] },{ x: goal[0], y: goal[1] }];
+ let nodes = [start,goal];
+// let nodes = [{ x: start[0], y: start[1] },{ x: goal[0], y: goal[1] }];
 
+
+   print(nodes)
   
 for (let i = 0; i < 20; i++) {
     let d1 = Math.sqrt((start[0]-goal[0]) ** 2+(start[1]-goal[1]) ** 2);
@@ -184,7 +186,7 @@ for (let i = 0; i < 20; i++) {
 
 
     if (typeof this.tpath === "undefined" || this.tpath === []) {
-    this.tpath = this.aStar([this.x,this.y],[p.globx,p.globy],p)
+    this.tpath = this.aStar({x:this.x,y:this.y},{x:p.globx,y:p.globy},p)
 
     }
 
