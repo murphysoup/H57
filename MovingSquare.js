@@ -99,7 +99,7 @@ for (let i = 0; i < 20; i++) {
   fScore.set(start, heuristic(start, goal));
 
 
-
+  console.log(start)
   console.log(openSet)
 
   while (openSet.length > 0) {
