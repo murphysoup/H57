@@ -55,8 +55,6 @@ neighborsf(node, nodes) {
  let nodes = [start,goal];
 // let nodes = [{ x: start[0], y: start[1] },{ x: goal[0], y: goal[1] }];
 
-
-   print(nodes)
   
 for (let i = 0; i < 20; i++) {
     let d1 = Math.sqrt((start[0]-goal[0]) ** 2+(start[1]-goal[1]) ** 2);
