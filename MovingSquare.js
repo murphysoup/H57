@@ -96,6 +96,10 @@ for (let i = 0; i < 20; i++) {
   nodes.forEach(node => fScore.set(node, Infinity));
   fScore.set(start, heuristic(start, goal));
 
+
+
+  console.log(openSet)
+
   while (openSet.length > 0) {
     // Get node in openSet with lowest fScore
     openSet.sort((a, b) => fScore.get(a) - fScore.get(b));
@@ -109,10 +113,7 @@ for (let i = 0; i < 20; i++) {
         current = cameFrom.get(current);
         path.unshift(current);
 
-                console.log(cameFrom)
 
-        console.log(current)
-        console.log(path)
 
       }
       return path;
