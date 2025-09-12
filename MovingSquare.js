@@ -86,10 +86,8 @@ for (let i = 0; i < 20; i++) {
   }
 
   let openSet = [start];
-  console.log(start);
-  console.log(openSet);
-     console.log([{x:1,y:2}]);
-   console.log([start]);
+
+
   let cameFrom = new Map();
 
   let gScore = new Map();
@@ -192,7 +190,7 @@ for (let i = 0; i < 20; i++) {
     }
 
     console.log(this.tpath)
-      
+    
     let dy = this.tpath[0][1] - this.y;
     let dist = Math.sqrt(dx*dx + dy*dy);
     if (dist > 6) { 
