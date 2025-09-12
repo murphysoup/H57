@@ -86,6 +86,10 @@ for (let i = 0; i < 20; i++) {
   }
 
   let openSet = [start];
+  console.log(start);
+  console.log(openSet);
+     console.log([{x:1,y:2}]);
+   console.log([start]);
   let cameFrom = new Map();
 
   let gScore = new Map();
@@ -97,8 +101,7 @@ for (let i = 0; i < 20; i++) {
   fScore.set(start, heuristic(start, goal));
 
 
-  console.log(start)
-  console.log(openSet)
+
 
   while (openSet.length > 0) {
     // Get node in openSet with lowest fScore
