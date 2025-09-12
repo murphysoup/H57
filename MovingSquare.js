@@ -196,7 +196,7 @@ for (let i = 0; i < 20; i++) {
     let dist = Math.sqrt(dx*dx + dy*dy);
     if (dist > 6) { 
 
-      
+      console.log(dist)
     this.x += (dx / dist) * 2.5; 
     this.y += (dy / dist) * 2.5; 
 
