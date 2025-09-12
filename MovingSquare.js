@@ -52,8 +52,8 @@ neighborsf(node, nodes) {
   // nodes: array of {x, y, id}
   // neighborsFunc: function(node) => returns array of neighboring nodes
   
- let nodes = [start,goal];
-
+// let nodes = [start,goal];
+ let nodes = [{ x: start[0], y: start[1] },{ x: goal[0], y: goal[1] }];
 
   
 for (let i = 0; i < 20; i++) {
@@ -71,7 +71,7 @@ for (let i = 0; i < 20; i++) {
             rx > wall[0][0] &&
             ry < wall[1][1] &&
             ry > wall[0][1])) {
-     nodes.push([rx,ry])
+     nodes.push({x:rx,y:ry})
      
    }
 
