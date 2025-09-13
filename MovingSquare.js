@@ -196,7 +196,7 @@ for (let i = 0; i < 20; i++) {
     let dx = this.tpath[0].x - this.x;
     let dy = this.tpath[0].y - this.y;
     let dist = Math.sqrt(dx*dx + dy*dy);
-    console.log(dist)
+   // console.log(dist)
       
     if (dist > 6) { 
 
@@ -210,6 +210,9 @@ for (let i = 0; i < 20; i++) {
                   
                   
                   }    else { 
+
+          this.x += (200*Math.random()-100);
+    this.y += (200*Math.random()-100);
     this.tpath.shift()
       
                             
@@ -224,6 +227,7 @@ for (let i = 0; i < 20; i++) {
     let dx2 = p.globx - this.x;
     let dy2 = p.globy - this.y;
     let dist2 = Math.sqrt(dx2*dx2 + dy2*dy2);
+      console.log(dist2)
     if (dist2 < 6) { 
          p.hp -= 1  
     this.x += (200*Math.random()-100);
