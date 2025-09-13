@@ -212,7 +212,7 @@ for (let i = 0; i < 20; i++) {
           this.x += (200*Math.random()-100);
     this.y += (200*Math.random()-100);
     this.tpath.shift()
-      console.log(tpath)
+      console.log(this.tpath)
                             
                             
                             
