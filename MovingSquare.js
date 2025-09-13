@@ -224,7 +224,7 @@ for (let i = 0; i < 20; i++) {
     let dx2 = p.globx - this.x;
     let dy2 = p.globy - this.y;
     let dist2 = Math.sqrt(dx2*dx2 + dy2*dy2);
-    if (dist2 > 6) { 
+    if (dist2 < 6) { 
          p.hp -= 1  
     this.x += (200*Math.random()-100);
     this.y += (200*Math.random()-100);  
