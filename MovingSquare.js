@@ -189,14 +189,14 @@ for (let i = 0; i < 20; i++) {
 
     }
 
-    console.log(this.tpath)
-    console.log('freaky ngl')
+ //   console.log(this.tpath)
+ //   console.log('freaky ngl')
 
 
-    let dy = this.tpath[0][0] - this.x;
+    let dx = this.tpath[0][0] - this.x;
     let dy = this.tpath[0][1] - this.y;
     let dist = Math.sqrt(dx*dx + dy*dy);
-
+    console.log(dist)
       
     if (dist > 6) { 
 
