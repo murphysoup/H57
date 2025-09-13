@@ -190,8 +190,6 @@ for (let i = 0; i < 20; i++) {
     }
 
  //   console.log(this.tpath)
- //   console.log('freaky ngl')
-
 
     let dx = this.tpath[0].x - this.x;
     let dy = this.tpath[0].y - this.y;
@@ -210,11 +208,11 @@ for (let i = 0; i < 20; i++) {
                   
                   
                   }    else { 
-
+        
           this.x += (200*Math.random()-100);
     this.y += (200*Math.random()-100);
     this.tpath.shift()
-      
+      console.log(tpath)
                             
                             
                             
