@@ -193,8 +193,8 @@ for (let i = 0; i < 20; i++) {
  //   console.log('freaky ngl')
 
 
-    let dx = this.tpath[0][0] - this.x;
-    let dy = this.tpath[0][1] - this.y;
+    let dx = this.tpath[0].x - this.x;
+    let dy = this.tpath[0].y - this.y;
     let dist = Math.sqrt(dx*dx + dy*dy);
     console.log(dist)
       
