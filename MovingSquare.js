@@ -204,8 +204,8 @@ for (let i = 0; i < 20; i++) {
     this.y += (dy / dist) * 2.5; 
 
       
-    this.x += (6*Math.random()-3);
-    this.y += (6*Math.random()-3);             
+  //  this.x += (2*Math.random()-1);
+ //   this.y += (2*Math.random()-1);             
                   
                   
                   
