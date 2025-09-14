@@ -89,7 +89,7 @@ for (let i = 0; i < 20; i++) {
     let ry = (2*Math.random()-1) * (start[1]+d1 - start[1]-d1) + start[1]-d1;
   //console.log(p.wallboxes)
   };
- console.log([..nodes])
+ console.log([...nodes])
  console.log('n')
   
   function heuristic(a, b) {
