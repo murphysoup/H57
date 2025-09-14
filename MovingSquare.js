@@ -77,8 +77,8 @@ for (let i = 0; i < 20; i++) {
 
 
   }})};
- console.log(nodes)
-
+ console.log([..nodes])
+ console.log('n')
   
   function heuristic(a, b) {
     // Euclidean distance
@@ -113,7 +113,7 @@ for (let i = 0; i < 20; i++) {
     let current = openSet.shift();
 
     
-    if (current === goal) {
+    if (current.x === goal.x && current.y === goal.y) {
       // Reconstruct path
       let path = [current];
       while (cameFrom.has(current)) {
