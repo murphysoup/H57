@@ -24,8 +24,43 @@ p.wallboxes = [];
 
 
 p.preload = () => {
-  p.tree1 = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1756021194/nivtree1_jrfdun.png')
-  p.map1s = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.png')
+
+ 
+    p.loaded = [];
+    p.mapjson = ['map.json'];
+    p.mapset = ['tileset.png'];
+ 
+    let li = []
+
+    let mjson = [];
+    let mset = [];
+ 
+
+
+   for (let i = 0; i < mjson.length; i++) {
+    p.mapjson[i] = p.loadJSON(mjson[i]);
+
+   }
+ 
+   for (let i = 0; i < mset.length; i++) {
+    p.mapjson[i] = p.loadImage(mjson[i]);
+
+   }
+ 
+   for (let i = 0; i < li.length; i++) {
+    file = p.loadImage(li[i]);
+    p.loaded[file.split(".")[0]]=file
+   
+   }
+
+ 
+//  p.tree1 = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1756021194/nivtree1_jrfdun.png');
+
+
+ p.tree1 = p.loadImage('assets/images/tree1.png');
+
+ 
+  p.map1s = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.png');
   p.texturesmap = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/download_33_1_usl3ii.jpg');
   p.trizzler = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1756879191/raw_kcoxql.webp');
 };
@@ -57,6 +92,30 @@ p.addbox(wallsahh,value[0]-hitx+xoff,value[1]-hity+yoff,value[0]+hitx+xoff,value
 
 
 
+ 
+p.drawMap = (mapData,tilesetImg,gfx) =>  {
+  let tileWidth = mapData.tilewidth;
+  let tileHeight = mapData.tileheight;
+  let columns = mapData.width;
+
+  let layer = mapData.layers[0];
+  for (let i = 0; i < layer.data.length; i++) {
+    let tileIndex = layer.data[i] - 1;
+    if (tileIndex < 0) continue;
+
+    let sx = (tileIndex % (tilesetImg.width / tileWidth)) * tileWidth;
+    let sy = Math.floor(tileIndex / (tilesetImg.width / tileWidth)) * tileHeight;
+
+    let dx = (i % columns) * tileWidth;
+    let dy = Math.floor(i / columns) * tileHeight;
+
+    gfx.image(tilesetImg, dx, dy, tileWidth, tileHeight, sx, sy, tileWidth, tileHeight);
+  }
+}
+
+
+
+
 
 }
  
@@ -66,6 +125,10 @@ p.addbox = (g,x1,y1,x2,y2) => {
 }
 
 p.buildlevel = (lvl,sx,sy) => {
+
+
+  p.mapData = p.mapjson[lvl-1]
+  p.tileImg = p.mapset[lvl-1]
   p.movingSquares = [];
   p.wallboxes = [];
   let spawnx = sx+p.width / 2;
@@ -82,8 +145,12 @@ p.buildlevel = (lvl,sx,sy) => {
  // p.addbox(p.wallboxes,100,100,200,300)
 //  console.log(p.wallboxes[0])
   
-  p.movingSquares.push(new MovingSquare(0, 0, 4096, p.map1s, 'map', p));
+  let map=new MovingSquare(0, 0, 4096, 0, 'map', p);
+  p.movingSquares.push(map)
+  p.drawMap(p.mapData,p.tileImg,map.objectsprite)
 
+
+   
   p.addbox(p.wallboxes,-2048,2048,2058,2058)
   p.addbox(p.wallboxes,2048,-2048,2058,2058)
   p.addbox(p.wallboxes,-2058,-2058,2048,-2048)
