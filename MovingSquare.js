@@ -31,7 +31,7 @@ delete(p) {
   }
 
 
-function F(node,p) {
+ F(node,p) {
 
 
 p.wallboxes.forEach((wall) => { 
@@ -65,7 +65,7 @@ neighborsf(node, nodes,p) {
       return distA - distB;
     })
     .slice(0, 3) // take only the 3 closest
-    .filter(n => F(n,p)); 
+    .filter(n => this.F(n,p)); 
 
 
 
