@@ -57,7 +57,7 @@ p.preload = () => {
 //  p.tree1 = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1756021194/nivtree1_jrfdun.png');
 
 
- p.tree1 = p.loadImage('assets/images/tree1.png');
+ p.tree1 = p.loadImage('assets/images/nivtree.png');
 
  
   p.map1s = p.loadImage('https://res.cloudinary.com/dkjgmeufk/image/upload/v1754468817/firstmap_zuxfed.png');
