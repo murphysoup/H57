@@ -106,11 +106,11 @@ function nodeKey(n) { return `${n.x},${n.y}`; }
 
 let gScore = new Map();
 nodes.forEach(n => gScore.set(nodeKey(n), Infinity));
-gScore.set(nodeKey(startNode), 0);
+gScore.set(nodeKey(start), 0);
 
 let fScore = new Map();
 nodes.forEach(n => fScore.set(nodeKey(n), Infinity));
-fScore.set(nodeKey(startNode), heuristic(startNode, goalNode));
+fScore.set(nodeKey(start), heuristic(start, goalNode));
 
 
 
