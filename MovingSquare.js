@@ -101,6 +101,22 @@ for (let i = 0; i < 20; i++) {
 
 
 
+   
+    for (let neighbor of this.neighborsf(current, nodes)) {
+      let tentativeG = gScore.get(current) + heuristic(current, neighbor);
+      if (tentativeG < gScore.get(neighbor)) {
+        cameFrom.set(neighbor, current);
+        gScore.set(neighbor, tentativeG);
+        fScore.set(neighbor, tentativeG + heuristic(neighbor, goal));
+        if (!openSet.includes(neighbor)) {
+          openSet.push(neighbor);
+        }
+      }
+    }
+
+
+
+   
   while (openSet.length > 0) {
     // Get node in openSet with lowest fScore
     openSet.sort((a, b) => fScore.get(a) - fScore.get(b));
@@ -114,23 +130,13 @@ for (let i = 0; i < 20; i++) {
         current = cameFrom.get(current);
         path.unshift(current);
 
-
+         console.log(path);
 
       }
       return path;
     }
 
-    for (let neighbor of this.neighborsf(current, nodes)) {
-      let tentativeG = gScore.get(current) + heuristic(current, neighbor);
-      if (tentativeG < gScore.get(neighbor)) {
-        cameFrom.set(neighbor, current);
-        gScore.set(neighbor, tentativeG);
-        fScore.set(neighbor, tentativeG + heuristic(neighbor, goal));
-        if (!openSet.includes(neighbor)) {
-          openSet.push(neighbor);
-        }
-      }
-    }
+
   }
 
   // No path found
