@@ -31,9 +31,31 @@ delete(p) {
   }
 
 
-  
+function F(node,p) {
 
-neighborsf(node, nodes) {
+
+p.wallboxes.forEach((wall) => { 
+ // console.log(p.dist(wall[0][0], wall[0][1], p.globx, p.globy))
+    rx = node.x
+    ry = node.y
+    
+    if (p.dist(wall[0][0], wall[0][1], rx, ry) < wall[2]) { 
+  
+   if (!(rx < wall[1][0] &&
+            rx > wall[0][0] &&
+            ry < wall[1][1] &&
+            ry > wall[0][1])) {
+    return False
+     
+   }
+
+
+  }})
+return True
+  
+}
+
+neighborsf(node, nodes,p) {
   // Return the 3 closest nodes to the given node
   return nodes
     .filter(n => n !== node) // exclude itself
@@ -42,7 +64,12 @@ neighborsf(node, nodes) {
       const distB = Math.sqrt((b.x - node.x) ** 2 + (b.y - node.y) ** 2);
       return distA - distB;
     })
-    .slice(0, 3); // take only the 3 closest
+    .slice(0, 3) // take only the 3 closest
+    .filter(n => F(n,p)); 
+
+
+
+  
 }
 
 
@@ -61,22 +88,7 @@ for (let i = 0; i < 20; i++) {
     let rx = (2*Math.random()-1) * (start[0]+d1 - start[0]-d1) + start[0]-d1;
     let ry = (2*Math.random()-1) * (start[1]+d1 - start[1]-d1) + start[1]-d1;
   //console.log(p.wallboxes)
-  p.wallboxes.forEach((wall) => { 
- // console.log(p.dist(wall[0][0], wall[0][1], p.globx, p.globy))
-    
-    
-    if (p.dist(wall[0][0], wall[0][1], rx, ry) < wall[2]) { 
-  
-   if (!(rx < wall[1][0] &&
-            rx > wall[0][0] &&
-            ry < wall[1][1] &&
-            ry > wall[0][1])) {
-     nodes.push({x:rx,y:ry})
-     
-   }
-
-
-  }})};
+  };
  console.log([..nodes])
  console.log('n')
   
@@ -90,14 +102,15 @@ for (let i = 0; i < 20; i++) {
 
   let cameFrom = new Map();
 
-  let gScore = new Map();
-  nodes.forEach(node => gScore.set(node, Infinity));
-  gScore.set(start, 0);
+function nodeKey(n) { return `${n.x},${n.y}`; }
 
-  let fScore = new Map();
-  nodes.forEach(node => fScore.set(node, Infinity));
-  fScore.set(start, heuristic(start, goal));
+let gScore = new Map();
+nodes.forEach(n => gScore.set(nodeKey(n), Infinity));
+gScore.set(nodeKey(startNode), 0);
 
+let fScore = new Map();
+nodes.forEach(n => fScore.set(nodeKey(n), Infinity));
+fScore.set(nodeKey(startNode), heuristic(startNode, goalNode));
 
 
 
@@ -109,7 +122,7 @@ for (let i = 0; i < 20; i++) {
    
   while (openSet.length > 0) {
     // Get node in openSet with lowest fScore
-    openSet.sort((a, b) => fScore.get(a) - fScore.get(b));
+    openSet.sort((a, b) => fScore.get(nodeKey(a)) - fScore.get(nodeKey(b)));
     let current = openSet.shift();
 
     
@@ -129,12 +142,12 @@ for (let i = 0; i < 20; i++) {
 
 
 
-    for (let neighbor of this.neighborsf(current, nodes)) {
-      let tentativeG = gScore.get(current) + heuristic(current, neighbor);
-      if (tentativeG < gScore.get(neighbor)) {
+    for (let neighbor of this.neighborsf(current, nodes,p)) {
+      let tentativeG = gScore.get(nodeKey(current)) + heuristic(current, neighbor);
+      if (tentativeG < gScore.get(nodeKey(neighbor))) {
         cameFrom.set(neighbor, current);
-        gScore.set(neighbor, tentativeG);
-        fScore.set(neighbor, tentativeG + heuristic(neighbor, goal));
+        gScore.set(nodeKey(neighbor), tentativeG);
+        fScore.set(nodeKey(neighbor), tentativeG + heuristic(neighbor, goal));
         if (!openSet.includes(neighbor)) {
           openSet.push(neighbor);
         }
