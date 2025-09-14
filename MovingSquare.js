@@ -36,8 +36,8 @@ delete(p) {
 
 p.wallboxes.forEach((wall) => { 
  // console.log(p.dist(wall[0][0], wall[0][1], p.globx, p.globy))
-    rx = node.x
-    ry = node.y
+    let rx = node.x
+    let ry = node.y
     
     if (p.dist(wall[0][0], wall[0][1], rx, ry) < wall[2]) { 
   
