@@ -110,7 +110,7 @@ gScore.set(nodeKey(start), 0);
 
 let fScore = new Map();
 nodes.forEach(n => fScore.set(nodeKey(n), Infinity));
-fScore.set(nodeKey(start), heuristic(start, goalNode));
+fScore.set(nodeKey(start), heuristic(start, goal));
 
 
 
