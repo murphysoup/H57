@@ -77,7 +77,7 @@ for (let i = 0; i < 20; i++) {
 
 
   }})};
-
+ console.log(nodes)
 
   
   function heuristic(a, b) {
@@ -120,7 +120,7 @@ for (let i = 0; i < 20; i++) {
         current = cameFrom.get(current);
         path.unshift(current);
 
-         console.log(path);
+         console.log([...path]);
 
       }
       return path;
