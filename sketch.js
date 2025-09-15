@@ -21,14 +21,16 @@ let walls = [];
 let inventorybutton;
 p.wallboxes = [];
 
+ 
+    p.loaded = [];
+    p.mapjson = [];
+    p.mapset = [];
 
 
 p.preload = () => {
 
  
-    p.loaded = [];
-    p.mapjson = [];
-    p.mapset = [];
+
  
     let li = []
 
@@ -50,7 +52,11 @@ p.preload = () => {
    for (let i = 0; i < li.length; i++) {
     file = p.loadImage(li[i]);
     p.loaded[file.split(".")[0]]=file
-   
+
+
+console.log(p.mapjson)
+
+    
    }
 
  
