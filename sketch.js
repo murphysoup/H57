@@ -67,6 +67,29 @@ p.preload = () => {
 
 
 
+ 
+p.drawMap = (mapData,tilesetImg,gfx) =>  {
+  let tileWidth = mapData.tilewidth;
+  let tileHeight = mapData.tileheight;
+  let columns = mapData.width;
+
+  let layer = mapData.layers[0];
+  for (let i = 0; i < layer.data.length; i++) {
+    let tileIndex = layer.data[i] - 1;
+    if (tileIndex < 0) continue;
+
+    let sx = (tileIndex % (tilesetImg.width / tileWidth)) * tileWidth;
+    let sy = Math.floor(tileIndex / (tilesetImg.width / tileWidth)) * tileHeight;
+
+    let dx = (i % columns) * tileWidth;
+    let dy = Math.floor(i / columns) * tileHeight;
+
+    gfx.image(tilesetImg, dx, dy, tileWidth, tileHeight, sx, sy, tileWidth, tileHeight);
+  }
+}
+
+
+
 p.buildthing = (wallsahh, obahh, otype, size, hitboxd, textures, coords) => {
 let hitx = hitboxd[0]
 let hity = hitboxd[1]
@@ -89,29 +112,6 @@ p.addbox(wallsahh,value[0]-hitx+xoff,value[1]-hity+yoff,value[0]+hitx+xoff,value
 
 
 
-
-
-
- 
-p.drawMap = (mapData,tilesetImg,gfx) =>  {
-  let tileWidth = mapData.tilewidth;
-  let tileHeight = mapData.tileheight;
-  let columns = mapData.width;
-
-  let layer = mapData.layers[0];
-  for (let i = 0; i < layer.data.length; i++) {
-    let tileIndex = layer.data[i] - 1;
-    if (tileIndex < 0) continue;
-
-    let sx = (tileIndex % (tilesetImg.width / tileWidth)) * tileWidth;
-    let sy = Math.floor(tileIndex / (tilesetImg.width / tileWidth)) * tileHeight;
-
-    let dx = (i % columns) * tileWidth;
-    let dy = Math.floor(i / columns) * tileHeight;
-
-    gfx.image(tilesetImg, dx, dy, tileWidth, tileHeight, sx, sy, tileWidth, tileHeight);
-  }
-}
 
 
 
