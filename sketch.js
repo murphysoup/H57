@@ -76,7 +76,7 @@ p.drawMap = (mapData,tilesetImg,gfx) =>  {
   let tileHeight = mapData.tileheight;
   let columns = mapData.width;
 
-   console.log(mapData)
+   console.log(mapData.layers)
  
   let layer = mapData.layers[0];
   for (let i = 0; i < layer.data.length; i++) {
