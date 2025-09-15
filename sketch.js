@@ -103,6 +103,7 @@ let xoff = hitboxd[2]
 let yoff = hitboxd[3]
 coords.forEach((value) => {
 
+console.log(p.mapjson)
 
 obahh.push(new MovingSquare(value[0], value[1], size, textures, otype, p));
 
