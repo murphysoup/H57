@@ -53,9 +53,6 @@ p.preload = () => {
     file = p.loadImage(li[i]);
     p.loaded[file.split(".")[0]]=file
 
-
-console.log(p.mapjson)
-
     
    }
 
@@ -79,6 +76,8 @@ p.drawMap = (mapData,tilesetImg,gfx) =>  {
   let tileHeight = mapData.tileheight;
   let columns = mapData.width;
 
+   console.log(mapData)
+ 
   let layer = mapData.layers[0];
   for (let i = 0; i < layer.data.length; i++) {
     let tileIndex = layer.data[i] - 1;
@@ -103,7 +102,6 @@ let xoff = hitboxd[2]
 let yoff = hitboxd[3]
 coords.forEach((value) => {
 
-console.log(p.mapjson)
 
 obahh.push(new MovingSquare(value[0], value[1], size, textures, otype, p));
 
