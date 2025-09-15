@@ -27,13 +27,13 @@ p.preload = () => {
 
  
     p.loaded = [];
-    p.mapjson = ['assets/mapdata/f1.json'];
-    p.mapset = ['assets/maps/grass.png'];
+    p.mapjson = [];
+    p.mapset = [];
  
     let li = []
 
-    let mjson = [];
-    let mset = [];
+    let mjson = ['assets/mapdata/f1.json'];
+    let mset = ['assets/maps/grass.png'];
  
 
 
@@ -43,7 +43,7 @@ p.preload = () => {
    }
  
    for (let i = 0; i < mset.length; i++) {
-    p.mapjson[i] = p.loadImage(mjson[i]);
+    p.mapjson[i] = p.loadImage(mset[i]);
 
    }
  
