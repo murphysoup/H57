@@ -27,8 +27,8 @@ p.preload = () => {
 
  
     p.loaded = [];
-    p.mapjson = ['map.json'];
-    p.mapset = ['tileset.png'];
+    p.mapjson = ['f1.json'];
+    p.mapset = ['grass.png'];
  
     let li = []
 
