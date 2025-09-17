@@ -312,7 +312,8 @@ p.draw = () => {
 
 
  
-
+  p.map.position.x = 0-p.globx+p.width / 2;;
+  p.map.position.y = 0-p.globy+p.height / 2;;
   p.drawSprites(p.map)
   p.drawSprites(p.backsprites);
   let g = p.text("coords: " + p.globx + "," + p.globy, 50, 200);
