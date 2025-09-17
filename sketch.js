@@ -76,7 +76,7 @@ p.drawMap = (mapData,tilesetImg,gfx) =>  {
   let tileHeight = mapData.tileheight;
   let columns = mapData.width;
 
-   console.log(mapData.layers)
+   console.log(gfx)
  
   let layer = mapData.layers[0];
   for (let i = 0; i < layer.data.length; i++) {
@@ -89,7 +89,7 @@ p.drawMap = (mapData,tilesetImg,gfx) =>  {
     let dx = (i % columns) * tileWidth;
     let dy = Math.floor(i / columns) * tileHeight;
 
-    gfx.addImage(tilesetImg, dx, dy, tileWidth, tileHeight, sx, sy, tileWidth, tileHeight);
+    gfx.image(tilesetImg, dx, dy, tileWidth, tileHeight, sx, sy, tileWidth, tileHeight);
   }
 }
 
