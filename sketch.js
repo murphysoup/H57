@@ -144,8 +144,8 @@ p.buildlevel = (lvl,sx,sy) => {
 
 
 
-  let map = p.createGraphics(p.mapjson[lvl-1].width * 32, p.mapjson[lvl-1].height * 32);
-  p.drawMap(p.mapData,p.tileImg,map)
+  p.map = p.createGraphics(p.mapjson[lvl-1].width * 32, p.mapjson[lvl-1].height * 32);
+  p.drawMap(p.mapData,p.tileImg,p.map)
 
 
  
@@ -313,7 +313,7 @@ p.draw = () => {
 
  
 
- 
+  p.drawSprites(p.map)
   p.drawSprites(p.backsprites);
   let g = p.text("coords: " + p.globx + "," + p.globy, 50, 200);
   g.textSize(20)
