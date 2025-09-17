@@ -146,7 +146,7 @@ p.buildlevel = (lvl,sx,sy) => {
 
   p.map = p.createGraphics(p.mapjson[lvl-1].width * 32, p.mapjson[lvl-1].height * 32);
   p.drawMap(p.mapData,p.tileImg,p.map)
-  p.mapg = new Group().add(p.map)
+  p.mapg = new p.Group().add(p.map)
 
  
   if (lvl == 1) {
