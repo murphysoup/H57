@@ -35,7 +35,7 @@ p.preload = () => {
     let li = []
 
     let mjson = ['https://res.cloudinary.com/dkjgmeufk/raw/upload/v1757924661/f1_wjph4e.json'];
-    let mset = ['assets/maps/grass.png'];
+    let mset = ['https://res.cloudinary.com/dkjgmeufk/image/upload/v1757924648/grass_hqoebs.png'];
  
 
 
