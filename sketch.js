@@ -72,8 +72,8 @@ p.preload = () => {
 
  
 p.drawMap = (mapData,tilesetImg,gfx) =>  {
-  let tileWidth = mapData.tilewidth;
-  let tileHeight = mapData.tileheight;
+  let tileWidth = mapData.tilewidth * 2;
+  let tileHeight = mapData.tileheight * 2;
   let columns = mapData.width;
 
    console.log(gfx)
@@ -144,7 +144,7 @@ p.buildlevel = (lvl,sx,sy) => {
 
 
 
-  p.map = p.createGraphics(p.mapjson[lvl-1].width * p.mapjson[lvl-1].tilewidth, p.mapjson[lvl-1].height * p.mapjson[lvl-1].tileheight);
+  p.map = p.createGraphics(p.mapjson[lvl-1].width * p.mapjson[lvl-1].tilewidth * 2, p.mapjson[lvl-1].height * p.mapjson[lvl-1].tileheight * 2);
   p.drawMap(p.mapData,p.tileImg,p.map)
   //p.mapg = new p.Group().add(p.map)
 
