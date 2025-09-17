@@ -146,7 +146,7 @@ p.buildlevel = (lvl,sx,sy) => {
 
   let map = p.createGraphics(p.mapjson[lvl-1].width * 32, p.mapjson[lvl-1].height * 32);
   p.movingSquares.push(map)
-  p.drawMap(p.mapData,p.tileImg,map.objectsprite)
+  p.drawMap(p.mapData,p.tileImg,map)
 
 
  
