@@ -89,7 +89,7 @@ p.drawMap = (mapData,tilesetImg,gfx) =>  {
     let dx = (i % columns) * tileWidth;
     let dy = Math.floor(i / columns) * tileHeight;
 
-    gfx.image(tilesetImg, dx, dy, tileWidth, tileHeight, sx, sy, tileWidth, tileHeight);
+    gfx.addImage(tilesetImg, dx, dy, tileWidth, tileHeight, sx, sy, tileWidth, tileHeight);
   }
 }
 
@@ -141,7 +141,15 @@ p.buildlevel = (lvl,sx,sy) => {
   p.inventoryopen = false
   p.globx = spawnx;
   p.globy = spawny;
-  
+
+
+
+  let map = p.createGraphics(p.mapjson[lvl-1].width * 32, p.mapjson[lvl-1].height * 32);
+  p.movingSquares.push(map)
+  p.drawMap(p.mapData,p.tileImg,map.objectsprite)
+
+
+ 
   if (lvl == 1) {
 //  p.maxgridoffset = -2000;
  // collisionGrid = Array.from({ length: 10 }, () =>
@@ -150,9 +158,7 @@ p.buildlevel = (lvl,sx,sy) => {
  // p.addbox(p.wallboxes,100,100,200,300)
 //  console.log(p.wallboxes[0])
   
-  let map=new MovingSquare(0, 0, 4096, 0, 'map', p);
-  p.movingSquares.push(map)
-  p.drawMap(p.mapData,p.tileImg,map.objectsprite)
+//  let map=new MovingSquare(0, 0, 4096, 0, 'map', p);
 
 
    
