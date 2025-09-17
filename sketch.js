@@ -45,7 +45,7 @@ p.preload = () => {
    }
  
    for (let i = 0; i < mset.length; i++) {
-    p.mapjson[i] = p.loadImage(mset[i]);
+    p.mapset[i] = p.loadImage(mset[i]);
 
    }
  
