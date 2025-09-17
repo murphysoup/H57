@@ -314,7 +314,7 @@ p.draw = () => {
  
 //  p.map.position.x = 0-p.globx+p.width / 2;;
  // p.map.position.y = 0-p.globy+p.height / 2;;
-  p.image(p.map,0-p.globx+p.width / 2,0-p.globy+p.height / 2)
+  p.image(p.map,0-p.globx+p.width / 2,0-p.globy+p.height / 2, p.map.width*4, p.map.height*4)
   p.drawSprites(p.backsprites);
   let g = p.text("coords: " + p.globx + "," + p.globy, 50, 200);
   g.textSize(20)
