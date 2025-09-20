@@ -11,6 +11,7 @@ export default class MovingSquare {
     this.type = objtype;
     this.sqsize = sqsize;
     this.sectype = sectype;
+    this.finder = new PF.AStarFinder();
    // this.img = img;
     this.objectsprite = p.createSprite(x, y, sqsize, sqsize);
     if (img !== 0) {this.objectsprite.addImage(img)};
@@ -32,6 +33,25 @@ delete(p) {
   }
 
 
+
+
+  
+pathFind(sx,sy,tx,ty,gridData) { 
+
+ const grid = new PF.Grid(gridData);
+
+  // Find path from enemy to player
+  const path = this.finder.findPath(
+    tx,
+    ty,
+    tx,
+    ty,
+    grid
+  );
+  return path
+}
+
+  
  F(node,p) {
 
 
@@ -73,93 +93,6 @@ neighborsf(node, nodes,p) {
   
 }
 
-
-  
-
- aStar(start, goal, p, nodesa=0, neighborsFunc=this.neighborsf) {
-  // nodes: array of {x, y, id}
-  // neighborsFunc: function(node) => returns array of neighboring nodes
-  
- let nodes = [start,goal];
-// let nodes = [{ x: start[0], y: start[1] },{ x: goal[0], y: goal[1] }];
-
-  
-for (let i = 0; i < 20; i++) {
-    let d1 = Math.sqrt((start[0]-goal[0]) ** 2+(start[1]-goal[1]) ** 2);
-    let rx = (2*Math.random()-1) * (start[0]+d1 - start[0]-d1) + start[0]-d1;
-    let ry = (2*Math.random()-1) * (start[1]+d1 - start[1]-d1) + start[1]-d1;
-  //console.log(p.wallboxes)
-  };
- console.log([...nodes])
- console.log('n')
-  
-  function heuristic(a, b) {
-    // Euclidean distance
-    return Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
-  }
-
-  let openSet = [start];
-
-
-  let cameFrom = new Map();
-
-function nodeKey(n) { return `${n.x},${n.y}`; }
-
-let gScore = new Map();
-nodes.forEach(n => gScore.set(nodeKey(n), Infinity));
-gScore.set(nodeKey(start), 0);
-
-let fScore = new Map();
-nodes.forEach(n => fScore.set(nodeKey(n), Infinity));
-fScore.set(nodeKey(start), heuristic(start, goal));
-
-
-
-   
-
-
-
-
-   
-  while (openSet.length > 0) {
-    // Get node in openSet with lowest fScore
-    openSet.sort((a, b) => fScore.get(nodeKey(a)) - fScore.get(nodeKey(b)));
-    let current = openSet.shift();
-
-    
-    if (current.x === goal.x && current.y === goal.y) {
-      // Reconstruct path
-      let path = [current];
-      while (cameFrom.has(current)) {
-        current = cameFrom.get(current);
-        path.unshift(current);
-
-         console.log([...path]);
-
-      }
-      return path;
-    }
-
-
-
-
-    for (let neighbor of this.neighborsf(current, nodes,p)) {
-      let tentativeG = gScore.get(nodeKey(current)) + heuristic(current, neighbor);
-      if (tentativeG < gScore.get(nodeKey(neighbor))) {
-        cameFrom.set(neighbor, current);
-        gScore.set(nodeKey(neighbor), tentativeG);
-        fScore.set(nodeKey(neighbor), tentativeG + heuristic(neighbor, goal));
-        if (!openSet.includes(neighbor)) {
-          openSet.push(neighbor);
-        }
-      }
-    }
-    
-  }
-
-  // No path found
-  return [];
-}
 
 
   
@@ -209,14 +142,14 @@ fScore.set(nodeKey(start), heuristic(start, goal));
 
 
     if (typeof this.tpath === "undefined" || this.tpath === []) {
-    this.tpath = this.aStar({x:this.x,y:this.y},{x:p.globx,y:p.globy},p)
+    this.tpath = this.pathFind(this.x,this.y,p.globx,p.globy,p.pgrid)
 
     }
 
  //   console.log(this.tpath)
 
-    let dx = this.tpath[0].x - this.x;
-    let dy = this.tpath[0].y - this.y;
+    let dx = this.tpath[0][0]*64 - this.x;
+    let dy = this.tpath[0][1]*64 - this.y;
     let dist = Math.sqrt(dx*dx + dy*dy);
    // console.log(dist)
       
