@@ -2,6 +2,7 @@
 
 let xrizz = 40;
 
+import PF from "pathfinding";
 
 
 export default class MovingSquare {
