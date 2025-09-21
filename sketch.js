@@ -94,7 +94,6 @@ p.drawMap = (mapData,tilesetImg,gfx) =>  {
   let tileHeight = mapData.tileheight;
   let columns = mapData.width;
 
-   console.log(gfx)
  
   let layer = mapData.layers[0];
   for (let i = 0; i < layer.data.length; i++) {
@@ -166,6 +165,10 @@ p.buildlevel = (lvl,sx,sy) => {
   p.drawMap(p.mapData,p.tileImg,p.map)
   //p.mapg = new p.Group().add(p.map)
   p.pgrid = p.getGrid(p.mapData)
+
+
+
+
  
   if (lvl == 1) {
 //  p.maxgridoffset = -2000;
