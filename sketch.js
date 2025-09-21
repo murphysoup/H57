@@ -73,6 +73,8 @@ p.getGrid = (mapData) => {
 // Assuming mapData is the parsed JSON from Tiled
 const collisionLayer = mapData.layers.find(layer => layer.name === "Collisions");
 
+console.log(collisionLayer)
+ 
 const gridData = [];
 for (let y = 0; y < mapData.height; y++) {
   const row = [];
