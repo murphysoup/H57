@@ -69,7 +69,25 @@ p.preload = () => {
 };
 
 
+p.getGrid = (mapData) => {
+// Assuming mapData is the parsed JSON from Tiled
+const collisionLayer = mapData.layers.find(layer => layer.name === "Collisions");
 
+const gridData = [];
+for (let y = 0; y < mapData.height; y++) {
+  const row = [];
+  for (let x = 0; x < mapData.width; x++) {
+    const tile = collisionLayer.data[y * mapData.width + x];
+    row.push(tile === 0 ? 0 : 1); // 0 = walkable, 1 = blocked
+  }
+  gridData.push(row);
+}
+
+// Create grid
+return PF.Grid(mapData.width, mapData.height, gridData);
+}
+
+ 
  
 p.drawMap = (mapData,tilesetImg,gfx) =>  {
   let tileWidth = mapData.tilewidth;
@@ -147,7 +165,7 @@ p.buildlevel = (lvl,sx,sy) => {
   p.map = p.createGraphics(p.mapjson[lvl-1].width * p.mapjson[lvl-1].tilewidth, p.mapjson[lvl-1].height * p.mapjson[lvl-1].tileheight);
   p.drawMap(p.mapData,p.tileImg,p.map)
   //p.mapg = new p.Group().add(p.map)
-
+  p.pgrid = p.getGrid(p.mapData)
  
   if (lvl == 1) {
 //  p.maxgridoffset = -2000;
