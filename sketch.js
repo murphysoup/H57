@@ -1,4 +1,6 @@
 // sketch.js
+
+
 const PF = window.PF; 
 let player;
 let numSquares = 1000;
