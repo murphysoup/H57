@@ -1,5 +1,5 @@
 // sketch.js
-const PF = window.PF; 
+//const PF = window.PF; 
 let player;
 let numSquares = 1000;
 let textures = [];
