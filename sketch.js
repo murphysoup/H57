@@ -1,8 +1,8 @@
 // sketch.js
 
 
-const PF = window.PF; 
-console.log(PF)
+import PF from "https://cdn.jsdelivr.net/npm/pathfinding@0.4.18/esm/PathFinding.js";
+
 let player;
 let numSquares = 1000;
 let textures = [];
