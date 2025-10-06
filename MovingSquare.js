@@ -1,5 +1,5 @@
 // MovingSquare.js
-const PF = window.PF; 
+import PF from "https://cdn.jsdelivr.net/npm/pathfinding@0.4.18/esm/PathFinding.js";
 let xrizz = 40;
 
 //import PF from "pathfinding";
