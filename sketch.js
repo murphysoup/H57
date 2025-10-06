@@ -1,6 +1,9 @@
 // sketch.js
 
 
+
+
+
 //import PF from "https://cdn.jsdelivr.net/npm/pathfinding@0.4.18/esm/PathFinding.js";
 import PF from "https://cdn.jsdelivr.net/npm/pathfinding@0.4.18/+esm";
 
