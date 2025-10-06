@@ -95,7 +95,9 @@ for (let y = 0; y < mapData.height; y++) {
 }
 
 // Create grid
-return PF.Grid(mapData.width, mapData.height, gridData);
+let grid = new PF.Grid(mapData.width, mapData.height, gridData);
+return grid;
+
 }
 
  
