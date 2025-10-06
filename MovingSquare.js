@@ -5,6 +5,7 @@ let xrizz = 40;
 //import PF from "pathfinding";
 
 
+
 export default class MovingSquare {
   constructor(x, y, sqsize, img, objtype, p, sectype=0) {
     this.x = x;
