@@ -2,6 +2,7 @@
 
 
 const PF = window.PF; 
+console.log(PF)
 let player;
 let numSquares = 1000;
 let textures = [];
